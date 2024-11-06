@@ -1,4 +1,4 @@
-public class Order {
+public class Order extends Deli{
 
     Sandwich sandwich;
     BreadSize breadSize;

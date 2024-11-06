@@ -1,8 +1,7 @@
-public enum Meat {
-    STEAK,
-    HAM,
-    SALAMI,
-    ROASTBEEF,
-    CHICKEN,
-    BACON
+public class Meat extends Sandwich{
+
+    @Override
+    public double getPrice() {
+        return super.getPrice();
+    }
 }

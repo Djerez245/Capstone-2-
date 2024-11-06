@@ -1,4 +1,12 @@
 public enum PremiumTopping {
-    GUACAMOLE,
-    MUSHROOMS,
+    STEAK,
+    HAM,
+    SALAMI,
+    ROASTBEEF,
+    CHICKEN,
+    BACON,
+    AMERICAN,
+    PROVOLONE,
+    CHEDDAR,
+    SWISS
 }

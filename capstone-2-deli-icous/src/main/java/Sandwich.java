@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class Sandwich {
+public class Sandwich extends Deli {
     String sandwichName;
     ArrayList<Topping> toppings;
 
+
     Bread bread;
     Topping topping;
-    Meat meat;
     Sauces sauces;
 
 
