@@ -123,6 +123,19 @@ public class DisplayScreens {
         System.out.println("WOULD YOU LIKE TO ADD ANOTHER SANDWICH (YES OR NO)?");
     }
 
+    public static void typeOfChips(){
+        System.out.println("""
+                WHAT TYPE OF CHIPS WOULD YOU LIKE?
+                (0) DORITOS
+                (1) LAYS
+                (2) SOUR CREAM AND ONION
+                """);
+    }
+
+    public static void moreChips(){
+        System.out.println("WOULD YOU LIKE TO ADD MORE CHIPS?");
+    }
+
     public static void drink(){
         System.out.println("""
                 WHAT SIZE DRINK WOULD YOU LIKE?
@@ -131,6 +144,19 @@ public class DisplayScreens {
                 (1) MEDIUM
                 (2) LARGE
                 (3) NEVER MIND I DON'T WANT A DRINK
+                """);
+    }
+
+    public static void drinkType(){
+        System.out.println("""
+                WHAT KIND OF DRINK WOULD YOU LIKE?
+                (0) WATER
+                (1) COKE
+                (2) SPRITE
+                (3) SWEET TEA
+                (4) UN-SWEET TEA
+                (5) MOUNTAIN DEW
+                (6) SIGNATURE DRINK
                 """);
     }
 
