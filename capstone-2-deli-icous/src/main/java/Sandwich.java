@@ -1,18 +1,30 @@
-import javax.print.attribute.standard.Sides;
 import java.util.ArrayList;
 
-public class Sandwich extends Order {
+public class Sandwich implements Priceable{
     protected Bread bread;
     protected BreadSize sandwichSize;
-    protected ArrayList<Topping> toppings;
-    protected Sauces sauces;
+    protected ArrayList<Topping> topping;
+    protected boolean isToasted;
+    protected double sandwichPrice;
 
-    public Sandwich(double price, String customerName, Sandwich sandwich, BreadSize breadSize, Chips chips, Sides sides, Drink drink,
-                    DrinkSize drinkSize, Bread bread, BreadSize sandwichSize, ArrayList<Topping> toppings, Sauces sauces) {
-        super(price, customerName, sandwich, breadSize, chips, sides, drink, drinkSize);
+    public Sandwich(Bread bread, BreadSize sandwichSize, boolean isToasted) {
         this.bread = bread;
         this.sandwichSize = sandwichSize;
-        this.toppings = toppings;
-        this.sauces = sauces;
+        this.topping = new ArrayList<>();
+        this.isToasted = isToasted;
+    }
+
+    @Override
+    public double getPrice() {
+        if (BreadSize.SMALL == sandwichSize){
+            sandwichPrice = 5.5;
+            }
+        if (BreadSize.MEDIUM == sandwichSize){
+            sandwichPrice = 7.00;
+        }
+        if (BreadSize.LARGE == sandwichSize){
+            sandwichPrice = 8.5;
+        }
+        return sandwichPrice;
     }
 }

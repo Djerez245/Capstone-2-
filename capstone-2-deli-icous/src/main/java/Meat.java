@@ -1,8 +1,31 @@
-public enum Meat {
-    STEAK,
-    HAM,
-    SALAMI,
-    ROASTBEEF,
-    CHICKEN,
-    BACON
+public class Meat extends PremiumToppings implements Priceable {
+    private MeatType meatType;
+
+    public Meat(BreadSize breadSize, boolean extraTopping, MeatType meatType) {
+        super(breadSize, extraTopping);
+        this.meatType = meatType;
+    }
+
+    @Override
+    public double getPrice() {
+        if (BreadSize.SMALL == breadSize){
+            toppingPrice = 1.00;
+            if (extraTopping){
+                toppingPrice += .5;
+            }
+        }
+        if (BreadSize.MEDIUM == breadSize) {
+            toppingPrice = 2.00;
+            if (extraTopping) {
+                toppingPrice += 1.00;
+            }
+        }
+        if (BreadSize.LARGE == breadSize) {
+            toppingPrice = 3.00;
+            if (extraTopping) {
+                toppingPrice += 1.5;
+            }
+        }
+        return toppingPrice;
+    }
 }

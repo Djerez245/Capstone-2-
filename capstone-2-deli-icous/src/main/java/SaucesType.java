@@ -1,4 +1,4 @@
-public enum Sauces {
+public enum SaucesType {
     MAYO,
     MUSTARD,
     KETCHUP,

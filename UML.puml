@@ -1,0 +1,48 @@
+@startuml
+abstract class Deli {
+# double Price
++ double getPrice()
+}
+
+
+class Order {
+# Sandwich sandwich
+# BreadSize breadSize
+# Chips chips
+# Sides sides
+# Drink drink
+# DrinkSize drinkSize
++ double getPrice()
+}
+
+
+class Sandwich {
+# Bread bread
+# BreadSize sandwichSize
+# ArrayList<Topping> toppings
+# Sauces sauces
+# boolean isToasted
+}
+
+class PremiumToppings {
+# Meat meat
+# Cheese cheese
++ double getPrice()
+}
+
+
+class PACKAGE_NAME.Meat {
+}
+class customer {
+# String customerName
+}
+
+
+
+Priceable <|.. Order
+customer <|-- Order
+Order <|-- Sandwich
+Priceable <|.. PremiumToppings
+Sandwich <|-- PremiumToppings
+Deli <|-- customer
+@enduml

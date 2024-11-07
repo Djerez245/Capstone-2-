@@ -1,26 +1,41 @@
+import java.util.ArrayList;
 
 public class Order extends customer implements Priceable{
 
-    protected Sandwich sandwich;
-    protected BreadSize breadSize;
-    protected Chips chips;
-    protected Sides sides;
-    protected Drink drink;
-    protected DrinkSize drinkSize;
+    protected ArrayList<Sandwich> sandwiches;
+    protected ArrayList<Drink> drinks;
+    protected ArrayList<Chips> chips;
+    private double price;
 
-    public Order(double price, String customerName, Sandwich sandwich, BreadSize breadSize, Chips chips, Sides sides,
-                 Drink drink, DrinkSize drinkSize) {
+    public Order(double price, String customerName) {
         super(price, customerName);
-        this.sandwich = sandwich;
-        this.breadSize = breadSize;
-        this.chips = chips;
-        this.sides = sides;
-        this.drink = drink;
-        this.drinkSize = drinkSize;
+        this.sandwiches = new ArrayList<>();
+        this.drinks = new ArrayList<>();
+        this.chips = new ArrayList<>();
+        this.price = 0.0;
     }
 
     @Override
     public double getPrice() {
-        return super.getPrice();
+        for (Drink drink : drinks){
+            price += drink.getPrice();
+        }
+        for (Sandwich s: sandwiches){
+            price += s.getPrice();
+        }
+        for (Chips c : chips){
+            price += c.getPrice();
+        }
+        return price;
+    }
+
+    public void addSandwich(Sandwich sandwich){
+       sandwiches.add(sandwich);
+    }
+    public void addDrink(Drink drink){
+        drinks.add(drink);
+    }
+    public void addChip(Chips chip){
+        chips.add(chip);
     }
 }

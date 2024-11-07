@@ -1,11 +1,4 @@
-public enum Topping {
-    LETTUCE,
-    PEPPERS,
-    ONIONS,
-    TOMATOES,
-    JALEPENOS,
-    CUCUMBERS,
-    PICKLES,
-    GUACAMOLE,
-    MUSHROOMS
+public abstract class Topping {
+    public Topping() {
+    }
 }
