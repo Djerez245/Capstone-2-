@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Order extends customer implements Priceable{
+public class Order implements Priceable{
 
     protected ArrayList<Sandwich> sandwiches;
     protected ArrayList<Drink> drinks;
@@ -8,7 +8,6 @@ public class Order extends customer implements Priceable{
     private double price;
 
     public Order(double price, String customerName) {
-        super(price, customerName);
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();

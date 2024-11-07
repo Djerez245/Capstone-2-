@@ -27,4 +27,8 @@ public class Sandwich implements Priceable{
         }
         return sandwichPrice;
     }
+
+    public void addTopping(Topping toppings){
+        topping.add(toppings);
+    }
 }
