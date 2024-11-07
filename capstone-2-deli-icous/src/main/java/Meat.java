@@ -1,5 +1,5 @@
 public class Meat extends PremiumToppings implements Priceable {
-    private MeatType meatType;
+    protected MeatType meatType;
 
     public Meat(BreadSize breadSize, boolean extraTopping, MeatType meatType) {
         super(breadSize, extraTopping);

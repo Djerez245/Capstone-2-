@@ -1,17 +1,38 @@
 import java.util.ArrayList;
 
 public class Sandwich implements Priceable{
-    protected Bread bread;
+    protected BreadType breadType;
     protected BreadSize sandwichSize;
     protected ArrayList<Topping> topping;
     protected boolean isToasted;
     protected double sandwichPrice;
+    protected ToppingType toppingType;
 
-    public Sandwich(Bread bread, BreadSize sandwichSize, boolean isToasted) {
-        this.bread = bread;
+    public Sandwich(BreadType breadType, BreadSize sandwichSize, boolean isToasted) {
+        this.breadType = breadType;
         this.sandwichSize = sandwichSize;
         this.topping = new ArrayList<>();
         this.isToasted = isToasted;
+    }
+
+    public BreadType getBreadType() {
+        return breadType;
+    }
+
+    public BreadSize getSandwichSize() {
+        return sandwichSize;
+    }
+
+    public ArrayList<Topping> getTopping() {
+        return topping;
+    }
+
+    public boolean isToasted() {
+        return isToasted;
+    }
+
+    public double getSandwichPrice() {
+        return sandwichPrice;
     }
 
     @Override

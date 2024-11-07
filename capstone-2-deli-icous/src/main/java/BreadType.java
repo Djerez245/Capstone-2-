@@ -1,4 +1,4 @@
-public enum Bread {
+public enum BreadType {
     WHITE,
     WHEAT,
     RYE,

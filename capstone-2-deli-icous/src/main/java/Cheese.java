@@ -1,5 +1,5 @@
 public class Cheese extends PremiumToppings implements Priceable{
-    private CheeseType cheeseType;
+    protected CheeseType cheeseType;
 
     public Cheese(BreadSize breadSize, boolean extraTopping, CheeseType cheeseType) {
         super(breadSize, extraTopping);
