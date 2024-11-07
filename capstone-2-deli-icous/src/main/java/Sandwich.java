@@ -1,22 +1,18 @@
+import javax.print.attribute.standard.Sides;
 import java.util.ArrayList;
 
-public class Sandwich extends Deli {
-    protected String sandwichName;
+public class Sandwich extends Order {
+    protected Bread bread;
+    protected BreadSize sandwichSize;
     protected ArrayList<Topping> toppings;
+    protected Sauces sauces;
 
-    public Sandwich(double price, String sandwichName, ArrayList<Topping> toppings, Bread bread, Topping topping, Sauces sauces) {
-        super(price);
-        this.sandwichName = sandwichName;
-        this.toppings = toppings;
+    public Sandwich(double price, String customerName, Sandwich sandwich, BreadSize breadSize, Chips chips, Sides sides, Drink drink,
+                    DrinkSize drinkSize, Bread bread, BreadSize sandwichSize, ArrayList<Topping> toppings, Sauces sauces) {
+        super(price, customerName, sandwich, breadSize, chips, sides, drink, drinkSize);
         this.bread = bread;
-        this.topping = topping;
+        this.sandwichSize = sandwichSize;
+        this.toppings = toppings;
         this.sauces = sauces;
     }
-
-    Bread bread;
-    Topping topping;
-    Sauces sauces;
-
-
-
 }

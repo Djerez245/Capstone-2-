@@ -1,5 +1,5 @@
 public abstract class Deli {
- double Price;
+ protected double Price;
 
     public Deli(double price) {
         Price = price;

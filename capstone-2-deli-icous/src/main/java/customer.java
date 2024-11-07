@@ -1,5 +1,8 @@
 public class customer extends Deli{
-    String customerName;
+    protected String customerName;
 
-
+    public customer(double price, String customerName) {
+        super(price);
+        this.customerName = customerName;
+    }
 }

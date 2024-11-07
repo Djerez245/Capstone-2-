@@ -1,37 +1,26 @@
-public class Order extends Deli{
 
-    Sandwich sandwich;
-    BreadSize breadSize;
-    Chips chips;
-    Drink drink;
-    DrinkSize drinkSize;
+public class Order extends customer implements Priceable{
 
-    public Order(double price, Sandwich sandwich, BreadSize breadSize, Chips chips, Drink drink, DrinkSize drinkSize) {
-        super(price);
+    protected Sandwich sandwich;
+    protected BreadSize breadSize;
+    protected Chips chips;
+    protected Sides sides;
+    protected Drink drink;
+    protected DrinkSize drinkSize;
+
+    public Order(double price, String customerName, Sandwich sandwich, BreadSize breadSize, Chips chips, Sides sides,
+                 Drink drink, DrinkSize drinkSize) {
+        super(price, customerName);
         this.sandwich = sandwich;
         this.breadSize = breadSize;
         this.chips = chips;
+        this.sides = sides;
         this.drink = drink;
         this.drinkSize = drinkSize;
     }
 
-    public Sandwich getSandwich() {
-        return sandwich;
-    }
-
-    public BreadSize getBreadSize() {
-        return breadSize;
-    }
-
-    public Chips getChips() {
-        return chips;
-    }
-
-    public Drink getDrink() {
-        return drink;
-    }
-
-    public DrinkSize getDrinkSize() {
-        return drinkSize;
+    @Override
+    public double getPrice() {
+        return super.getPrice();
     }
 }
