@@ -7,11 +7,28 @@ public class UserInterface {
     DisplayScreens display;
     Scanner scanner = new Scanner(System.in);
 
-    public void deliMenus(){
+    public void runApp(){
+        DisplayScreens.displayHeader();
+        DisplayScreens.displayHomeScreen();
+        int homeInput = scanner.nextInt();
+        scanner.nextLine();
         boolean deliOpen = true;
         while (deliOpen){
+            if (homeInput == 1){
+                orderMenu();
+            }
+            if (homeInput == 2){
+                deliOpen = false;
+            }
+        }
+
+    }
+
+    public void orderMenu(){
+        boolean ordering = true;
+        while (ordering){
            DisplayScreens.displayHeader();
-           DisplayScreens.displayHomeScreen();
+           DisplayScreens.displayOrderScreen();
            int input = scanner.nextInt();
            scanner.nextLine();
            switch (input){
@@ -23,7 +40,7 @@ public class UserInterface {
                break;
                case 4:
                break;
-               case 5: deliOpen = false;
+               case 5: ordering = false;
                break;
            }
         }

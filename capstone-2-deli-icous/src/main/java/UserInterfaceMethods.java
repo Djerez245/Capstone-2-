@@ -13,7 +13,6 @@ public class UserInterfaceMethods {
     Chips chips;
 
 
-
     public void addSandwich(){
         DisplayScreens.displaySelectBreadType();
         int breadTypeInput = scanner.nextInt();
@@ -84,11 +83,11 @@ public class UserInterfaceMethods {
 
     public void addDrink(){
         DisplayScreens.WhatDrinkSize();
-        int drinkSizeInput = scanner.nextInt();
-        scanner.nextLine();
+        int drinkSizeInput = this.scanner.nextInt();
+        this.scanner.nextLine();
         DisplayScreens.drinkType();
-        int drinkTypeInput = scanner.nextInt();
-        scanner.nextLine();
+        int drinkTypeInput = this.scanner.nextInt();
+        this.scanner.nextLine();
         if (drinkSizeInput == drink.drinkSize.ordinal()){
             drink.drinkSize = DrinkSize.values()[drinkSizeInput];
         }
