@@ -5,9 +5,10 @@ public class Order implements Priceable{
     protected ArrayList<Sandwich> sandwiches;
     protected ArrayList<Drink> drinks;
     protected ArrayList<Chips> chips;
+    protected ArrayList<Order> orders;
     private double price;
 
-    public Order(double price, String customerName) {
+    public Order(double price, String customerName,ArrayList<Sandwich> sandwiches, ArrayList<Drink> drinks, ArrayList<Chips> chips) {
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
@@ -36,5 +37,8 @@ public class Order implements Priceable{
     }
     public void addChip(Chips chip){
         chips.add(chip);
+    }
+    public void addOrder(Order order){
+        orders.add(order);
     }
 }

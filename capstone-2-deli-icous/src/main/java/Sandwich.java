@@ -8,10 +8,10 @@ public class Sandwich implements Priceable{
     protected double sandwichPrice;
     protected ToppingType toppingType;
 
-    public Sandwich(BreadType breadType, BreadSize sandwichSize, boolean isToasted) {
+    public Sandwich(BreadType breadType, BreadSize sandwichSize, ArrayList<Topping> topping, boolean isToasted) {
         this.breadType = breadType;
         this.sandwichSize = sandwichSize;
-        this.topping = new ArrayList<>();
+        this.topping = topping;
         this.isToasted = isToasted;
     }
 

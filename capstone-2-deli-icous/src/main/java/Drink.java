@@ -1,6 +1,6 @@
 public class Drink implements Priceable{
     protected DrinkSize drinkSize;
-    protected double DrinkPrice;
+    protected double drinkPrice;
     protected DrinkType drinkType;
 
     public Drink(DrinkType drinkType, DrinkSize drinkSize) {
@@ -19,14 +19,16 @@ public class Drink implements Priceable{
     @Override
     public double getPrice() {
         if (DrinkSize.SMALL == drinkSize){
-            DrinkPrice = 2.00;
+            drinkPrice = 2.00;
         }if (DrinkSize.MEDIUM == drinkSize){
-            DrinkPrice = 2.5;
+            drinkPrice = 2.5;
         }
         if (DrinkSize.LARGE == drinkSize){
-            DrinkPrice = 3.00;
+            drinkPrice = 3.00;
         }
-
-        return DrinkPrice;
+        else {
+            drinkPrice = 0.0;
+        }
+        return drinkPrice;
     }
 }

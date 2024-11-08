@@ -6,6 +6,10 @@ public class Meat extends PremiumToppings implements Priceable {
         this.meatType = meatType;
     }
 
+    public MeatType getMeatType() {
+        return meatType;
+    }
+
     @Override
     public double getPrice() {
         if (BreadSize.SMALL == breadSize){

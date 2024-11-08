@@ -8,4 +8,13 @@ public abstract class PremiumToppings extends Topping implements Priceable {
         this.breadSize = breadSize;
         this.extraTopping = extraTopping;
     }
+
+    public BreadSize getBreadSize() {
+        return breadSize;
+    }
+
+    public boolean isExtraTopping() {
+        return extraTopping;
+    }
+
 }

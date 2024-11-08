@@ -30,30 +30,30 @@ public class DisplayScreens {
                 (2) EXIT
                 """);
     }
-    public static void displaySelectBreadType(){
-        System.out.println("""
+    public static String displaySelectBreadType(){
+        return  """
                 PLEASE SELECT THE TYPE OF BREAD THAT YOU WOULD LIKE:
                 
                 (0) WHITE
                 (1) WHEAT
                 (2) RYE
                 (3) WRAP
-                """);
+                """;
     }
 
 
-    public static void displaySelectBreadSize(){
-        System.out.println("""
+    public static String displaySelectBreadSize(){
+        return  """
                 PLEASE SELECT YOUR BREAD SIZE:
                 
                 (0) SMALL  (4 INCH)
                 (1) MEDIUM (8 INCH)
                 (2) LARGE  (12 INCH)
-                """);
+                """;
     }
 
-    public static void displayMeats(){
-        System.out.println("""
+    public static String displayMeats(){
+        return  """
                 WHAT MEAT WOULD YOU LIKE?
                 
                 (0) STEAK
@@ -63,29 +63,29 @@ public class DisplayScreens {
                 (4) CHICKEN
                 (5) BACON
                 (6) NO MEAT
-                """);
+                """;
     }
     public static void askForExtraMeat(){
         System.out.println("WOULD YOU LIKE EXTRA MEAT?");
     }
 
-    public static void displayCheese(){
-        System.out.println("""
+    public static String displayCheese(){
+        return """
                 WHAT CHEESE WOULD YOU LIKE?
                 (0) AMERICAN
                 (1) PROVOLONE
                 (2) CHEDDAR
                 (3) SWISS
                 (4) NO CHEESE
-                """);
+                """;
     }
 
     public static void askForExtraCheese(){
         System.out.println("WOULD YOU LIKE EXTRA CHEESE?");
     }
 
-    public static void displaySauces(){
-        System.out.println("""
+    public static String displaySauces(){
+        return """
                 SELECT YOUR SAUCES:
                 (0) MAYO
                 (1) MUSTARD
@@ -95,11 +95,11 @@ public class DisplayScreens {
                 (5) VINAIGRETTE
                 (6) NO SAUCE
                 (7) IM DONE WITH SAUCES
-                """);
+                """;
     }
 
-    public static void whatToppings(){
-        System.out.println("""
+    public static String whatToppings(){
+        return """
                 WHAT TOPPINGS WOULD YOU LIKE?
                 
                 (0) LETTUCE
@@ -112,7 +112,7 @@ public class DisplayScreens {
                 (7) GUACAMOLE
                 (8) MUSHROOMS
                 (9) IM DONE WITH TOPPINGS
-                """);
+                """;
     }
 
     public static void toastedOrNo(){
@@ -123,33 +123,33 @@ public class DisplayScreens {
         System.out.println("WOULD YOU LIKE TO ADD ANOTHER SANDWICH (YES OR NO)?");
     }
 
-    public static void typeOfChips(){
-        System.out.println("""
+    public static String typeOfChips(){
+        return """
                 WHAT TYPE OF CHIPS WOULD YOU LIKE?
                 (0) DORITOS
                 (1) LAYS
                 (2) SOUR CREAM AND ONION
                 (3) NO MORE CHIPS
-                """);
+                """;
     }
 
     public static void moreChips(){
         System.out.println("WOULD YOU LIKE TO ADD MORE CHIPS?");
     }
 
-    public static void WhatDrinkSize(){
-        System.out.println("""
+    public static String whatDrinkSize(){
+        return """
                 WHAT SIZE DRINK WOULD YOU LIKE?
                 
                 (0) SMALL
                 (1) MEDIUM
                 (2) LARGE
                 (3) NEVER MIND I DON'T WANT A DRINK
-                """);
+                """;
     }
 
-    public static void drinkType(){
-        System.out.println("""
+    public static String drinkType(){
+        return """
                 WHAT KIND OF DRINK WOULD YOU LIKE?
                 (0) WATER
                 (1) COKE
@@ -158,15 +158,15 @@ public class DisplayScreens {
                 (4) UN-SWEET TEA
                 (5) MOUNTAIN DEW
                 (6) SIGNATURE DRINK
-                """);
+                """;
     }
 
-    public static void displayCheckout(){
-        System.out.println("""
+    public static String displayCheckout(){
+        return """
                  ARE YOU SURE THAT YOU WOULD LIKE TO CHECK OUT CHECK-OUT?
                  (0) TO CONFIRM
                  (1) IM NOT DONE YET
-                """);
+                """;
     }
 
 }

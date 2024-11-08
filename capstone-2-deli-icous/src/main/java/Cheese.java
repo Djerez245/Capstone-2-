@@ -6,6 +6,10 @@ public class Cheese extends PremiumToppings implements Priceable{
         this.cheeseType = cheeseType;
     }
 
+    public CheeseType getCheeseType() {
+        return cheeseType;
+    }
+
     @Override
     public double getPrice() {
         if (BreadSize.SMALL == breadSize) {
