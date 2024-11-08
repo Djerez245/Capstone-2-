@@ -129,6 +129,7 @@ public class DisplayScreens {
                 (0) DORITOS
                 (1) LAYS
                 (2) SOUR CREAM AND ONION
+                (3) NO MORE CHIPS
                 """);
     }
 
@@ -136,7 +137,7 @@ public class DisplayScreens {
         System.out.println("WOULD YOU LIKE TO ADD MORE CHIPS?");
     }
 
-    public static void drink(){
+    public static void WhatDrinkSize(){
         System.out.println("""
                 WHAT SIZE DRINK WOULD YOU LIKE?
                 

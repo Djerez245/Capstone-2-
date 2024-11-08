@@ -1,10 +1,19 @@
 public class Drink implements Priceable{
-    private DrinkSize drinkSize;
-    private double DrinkPrice;
+    protected DrinkSize drinkSize;
+    protected double DrinkPrice;
+    protected DrinkType drinkType;
 
-    public Drink(DrinkSize drinkSize, double price) {
+    public Drink(DrinkType drinkType, DrinkSize drinkSize) {
+        this.drinkType = drinkType;
         this.drinkSize = drinkSize;
-        this.DrinkPrice = price;
+    }
+
+    public DrinkSize getDrinkSize() {
+        return drinkSize;
+    }
+
+    public DrinkType getDrinkType() {
+        return drinkType;
     }
 
     @Override

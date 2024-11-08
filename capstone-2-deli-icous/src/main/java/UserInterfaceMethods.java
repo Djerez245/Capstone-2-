@@ -8,6 +8,9 @@ public class UserInterfaceMethods {
     Topping topping;
     Meat meat;
     Cheese cheese;
+    Drink drink;
+    Order order;
+    Chips chips;
 
 
 
@@ -36,6 +39,9 @@ public class UserInterfaceMethods {
                 sandwich.addTopping(t);
             }
         }
+        DisplayScreens.displaySauces();
+        int sauceType = scanner.nextInt();
+        scanner.nextLine();
         DisplayScreens.toastedOrNo();
         String toasted = scanner.nextLine();
 
@@ -52,6 +58,9 @@ public class UserInterfaceMethods {
             sandwich.isToasted = false;
         }
         Sandwich s = new Sandwich(sandwich.getBreadType(), sandwich.getSandwichSize(), sandwich.isToasted);
+        order.addSandwich(s);
+
+        //TODO: figure out toppings
 
         if (meatInput == meat.meatType.ordinal()){
             meat.meatType = MeatType.values()[meatInput];
@@ -72,4 +81,43 @@ public class UserInterfaceMethods {
             premiumToppings.extraTopping = false;
         }
     }
+
+    public void addDrink(){
+        DisplayScreens.WhatDrinkSize();
+        int drinkSizeInput = scanner.nextInt();
+        scanner.nextLine();
+        DisplayScreens.drinkType();
+        int drinkTypeInput = scanner.nextInt();
+        scanner.nextLine();
+        if (drinkSizeInput == drink.drinkSize.ordinal()){
+            drink.drinkSize = DrinkSize.values()[drinkSizeInput];
+        }
+        if (drinkTypeInput == drink.drinkType.ordinal()){
+            drink.drinkType = DrinkType.values()[drinkTypeInput];
+        }
+        Drink d = new Drink(drink.getDrinkType(), drink.getDrinkSize());
+        order.addDrink(d);
+    }
+
+    public void addChips() {
+        for (Chips c : order.chips) {
+            DisplayScreens.typeOfChips();
+            int chipsInput = scanner.nextInt();
+            scanner.nextLine();
+            if (chipsInput == chips.chipsType.ordinal()){
+                chips.chipsType = ChipsType.values()[chipsInput];
+            }
+            Chips ch = new Chips(chips.getChipsType());
+            order.addChip(ch);
+            DisplayScreens.moreChips();
+            String moreChips = scanner.nextLine();
+            if (moreChips.equalsIgnoreCase("no")){
+                break;
+            }
+
+        }
+    }
+
+
+
 }

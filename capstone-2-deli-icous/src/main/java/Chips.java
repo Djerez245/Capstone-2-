@@ -1,8 +1,13 @@
 public class Chips implements Priceable {
     private double price;
+    public ChipsType chipsType;
 
-    public Chips(double price) {
-        this.price = price;
+    public Chips(ChipsType chipsType) {
+        this.chipsType = chipsType;
+    }
+
+    public ChipsType getChipsType() {
+        return chipsType;
     }
 
     @Override
