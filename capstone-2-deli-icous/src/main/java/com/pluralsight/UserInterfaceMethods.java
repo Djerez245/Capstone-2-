@@ -73,10 +73,8 @@ public class UserInterfaceMethods extends DisplayScreens {
                 Sauce sauce = new Sauce(selectedSauce);
                 s.addTopping(sauce);
                 System.out.println(SaucesType.values()[sauceType] + " SELECTED");
-                addingSauce = false;
             } else {
                 System.out.println("Invalid sauce selection. No sauce will be added.");
-                addingSauce = false;
             }
             moreSauce();
             String moreSauceInput = scanner.nextLine();
@@ -106,13 +104,12 @@ public class UserInterfaceMethods extends DisplayScreens {
                 int breadTypeInput = getIntInput(displaySelectBreadType());
                 int breadSizeInput = getIntInput(displaySelectBreadSize());
 
-
                 toastedOrNo();
                 String toasted = scanner.nextLine();
 
                 BreadType userBreadType;
                 BreadSize userBreadSize;
-                Boolean userToasted;
+                boolean userToasted;
 
                 // Setting sandwich bread type and size with exception handling
                 if (breadTypeInput >= 0 && breadTypeInput < BreadType.values().length) {
@@ -130,7 +127,6 @@ public class UserInterfaceMethods extends DisplayScreens {
                     System.out.println("Invalid bread size selection. Defaulting to MEDIUM.");
                     userBreadSize = BreadSize.MEDIUM;
                 }
-
                 userToasted = toasted.equalsIgnoreCase("yes");
 
                 // Create and add sandwich to order
@@ -153,7 +149,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                     System.out.println("Invalid meat selection. Defaulting to CHICKEN.");
                     userMeatType = MeatType.CHICKEN;
                 }
-                Boolean userExtraMeat;
+                boolean userExtraMeat;
                 userExtraMeat = extraMeat.equalsIgnoreCase("yes");
 
                 s.addTopping(new Meat(s.getSandwichSize(), userExtraMeat, userMeatType));
@@ -172,44 +168,13 @@ public class UserInterfaceMethods extends DisplayScreens {
                     System.out.println("Invalid cheese selection. Defaulting to CHEDDAR.");
                     userCheeseType = CheeseType.CHEDDAR;
                 }
-                Boolean userExtraCheese;
+                boolean userExtraCheese;
                 userExtraCheese = extraCheese.equalsIgnoreCase("yes");
                 Cheese c = new Cheese(s.getSandwichSize(), userExtraCheese, userCheeseType);
                 s.addTopping(c);
 
                 // Adding sauce to sandwich
-                boolean addingSauce = true;
-                while (addingSauce) {
-                    int sauceType = getIntInput(displaySauces());
-                    if (sauceType == 0) {
-                        addingSauce = false;
-                    }
-                    if (sauceType >= 0 && sauceType < SaucesType.values().length) {
-                        SaucesType selectedSauce = SaucesType.values()[sauceType];
-                        Sauce sauce = new Sauce(selectedSauce);
-                        s.addTopping(sauce);
-                        System.out.println(SaucesType.values()[sauceType] + " SELECTED");
-                        addingSauce = false;
-                    }
-                     else {
-                        System.out.println("Invalid sauce selection. No sauce will be added.");
-                        addingSauce = false;
-                    }
-                     moreSauce();
-                    String moreSauceInput = scanner.nextLine();
-
-                    if (moreSauceInput.equalsIgnoreCase("no")) {
-                        addingSauce = false;
-
-                        System.out.println("\nNo more sauce will be added.\n");
-
-                    } else if (moreSauceInput.equalsIgnoreCase("yes")) {
-                        System.out.println("\nAdding another Sauce...\n");
-                        addingSauce = true;
-                    } else {
-                        System.out.println("Invalid input");
-                    }
-                }
+                addSauce(s);
                 order.addSandwich(s);
 
             } catch (InputMismatchException e) {
@@ -237,7 +202,6 @@ public class UserInterfaceMethods extends DisplayScreens {
             }
         }
     }
-
 
     public void addDrink() {
         boolean addingDrinks = true;

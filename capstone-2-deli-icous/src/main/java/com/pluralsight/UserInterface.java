@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInterface extends UserInterfaceMethods {
@@ -10,31 +11,46 @@ public class UserInterface extends UserInterfaceMethods {
     public void runApp() {
         DisplayScreens.displayHeader();
         DisplayScreens.displayHomeScreen();
-        int homeInput = scanner.nextInt();
-        scanner.nextLine();
         boolean deliOpen = true;
         while (deliOpen) {
-            switch (homeInput){
-                case 1 -> orderMenu();
-                case 2 -> deliOpen = false;
+            try {
+                int homeInput = scanner.nextInt();
+                scanner.nextLine();
+                switch (homeInput) {
+                    case 1 -> orderMenu();
+                    case 2 -> {
+                        deliOpen = false;
+                        System.out.println("Thank you! Come again!");
+                    }
+                    default -> System.out.println("Invalid input. Please select 1 or 2.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.nextLine();
             }
         }
     }
 
+
     public void orderMenu() {
         boolean ordering = true;
         while (ordering) {
-            DisplayScreens.displayHeader();
-            DisplayScreens.displayOrderScreen();
-            int input = scanner.nextInt();
-            scanner.nextLine();
-            switch (input) {
-                case 1 -> addSandwich();
-                case 2 -> addDrink();
-                case 3 -> addChips();
-                case 4 -> { //checkout();
+            try {
+                DisplayScreens.displayHeader();
+                DisplayScreens.displayOrderScreen();
+                int input = scanner.nextInt();
+                scanner.nextLine();
+                switch (input) {
+                    case 1 -> addSandwich();
+                    case 2 -> addDrink();
+                    case 3 -> addChips();
+                    case 4 -> checkout(order);
+                    case 5 -> ordering = false;
+                    default -> System.out.println("Invalid input. Please select 1 - 9.");
                 }
-                case 5 -> ordering = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.nextLine();
             }
         }
     }

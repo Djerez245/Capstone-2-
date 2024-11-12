@@ -15,7 +15,6 @@ public class PrintReceipt {
     FileWriter fw = new FileWriter("capstone-2-deli-icous/Receipts/" + dateTime.format(fmtDateTime) + ".txt", true);
     BufferedWriter bufferedWriter = new BufferedWriter(fw);
 
-
     String receiptHeader = ("""
             =================================
                         RECEIPT
