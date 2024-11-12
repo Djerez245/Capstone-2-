@@ -43,4 +43,12 @@ public class Order implements Priceable{
     public void addOrder(Order order){
         orders.add(order);
     }
+    public void removeOrder(Order order){
+        orders.clear();
+    }
+
+
+    public String toStringForCsv(){
+       return "%s\n";
+    }
 }

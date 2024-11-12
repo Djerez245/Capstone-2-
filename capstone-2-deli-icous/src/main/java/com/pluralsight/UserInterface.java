@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class UserInterface extends UserInterfaceMethods {
 
 
-    DisplayScreens display;
     Scanner scanner = new Scanner(System.in);
 
     public void runApp() {
@@ -15,11 +14,9 @@ public class UserInterface extends UserInterfaceMethods {
         scanner.nextLine();
         boolean deliOpen = true;
         while (deliOpen) {
-            if (homeInput == 1) {
-                orderMenu();
-            }
-            if (homeInput == 2) {
-                deliOpen = false;
+            switch (homeInput){
+                case 1 -> orderMenu();
+                case 2 -> deliOpen = false;
             }
         }
     }
@@ -35,7 +32,7 @@ public class UserInterface extends UserInterfaceMethods {
                 case 1 -> addSandwich();
                 case 2 -> addDrink();
                 case 3 -> addChips();
-                case 4 -> {
+                case 4 -> { //checkout();
                 }
                 case 5 -> ordering = false;
             }

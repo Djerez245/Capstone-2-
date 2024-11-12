@@ -13,6 +13,7 @@ public class Sandwich implements Priceable{
         this.breadType = breadType;
         this.sandwichSize = sandwichSize;
         this.isToasted = isToasted;
+        topping = new ArrayList<>();
     }
 
     public BreadType getBreadType() {

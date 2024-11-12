@@ -100,6 +100,10 @@ public class DisplayScreens {
                 """;
     }
 
+    public static void moreSauce(){
+        System.out.println("WOULD YOU LIKE TO ADD MORE SAUCE?");
+    }
+
     public static String whatToppings(){
         return """
                 WHAT TOPPINGS WOULD YOU LIKE?
@@ -117,11 +121,15 @@ public class DisplayScreens {
                 """;
     }
 
+    public static void moreToppings(){
+        System.out.println("WOULD YOU LIKE TO ADD MORE TOPPINGS?");
+    }
+
     public static void toastedOrNo(){
         System.out.println("WOULD YOU LIKE IT TOASTED (YES OR NO)?");
     }
 
-    public static void AnotherSandwich(){
+    public static void anotherSandwich(){
         System.out.println("WOULD YOU LIKE TO ADD ANOTHER SANDWICH (YES OR NO)?");
     }
 
@@ -163,11 +171,15 @@ public class DisplayScreens {
                 """;
     }
 
+    public static void moreDrink(){
+        System.out.println("WOULD YOU LIKE ANOTHER DRINK?");
+    }
+
     public static String displayCheckout(){
         return """
                  ARE YOU SURE THAT YOU WOULD LIKE TO CHECK OUT CHECK-OUT?
                  (0) TO CONFIRM
-                 (1) IM NOT DONE YET
+                 (1) CANCEL ORDER
                 """;
     }
 
