@@ -11,7 +11,7 @@ public class UserInterfaceMethods extends DisplayScreens {
     RegularTopping regularTopping;
     Meat meat;
     Cheese cheese;
-    Order order;
+    Order order = new Order();
     Chips chips;
 
     public int getIntInput(String displayScreen) {
@@ -43,9 +43,6 @@ public class UserInterfaceMethods extends DisplayScreens {
         }
     }
 
-    public void addingSauce() {
-
-    }
 
     // adding sandwich and toppings
     public void addSandwich() {
@@ -164,6 +161,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                         DrinkType selectedDrinkType = DrinkType.values()[drinkTypeInput];
                         Drink d = new Drink(selectedDrinkType, selectedDrinkSize);
                         order.addDrink(d);
+                        System.out.println("DRINK ADDED");
                     } else {
                         System.out.println("Invalid drink type selection. Please try again.");
                     }

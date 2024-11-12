@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Sauce extends Topping{
+public class Sauce implements Topping{
     SaucesType sauceType;
 
     public Sauce(SaucesType sauceType) {

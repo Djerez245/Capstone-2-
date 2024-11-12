@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class RegularTopping extends Topping {
+public class RegularTopping implements Topping {
     ToppingType toppingType;
 
     public RegularTopping(ToppingType toppingType) {

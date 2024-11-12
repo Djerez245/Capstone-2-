@@ -10,7 +10,7 @@ public class Order implements Priceable{
     protected ArrayList<Order> orders;
     private double price;
 
-    public Order(double price, String customerName,ArrayList<Sandwich> sandwiches, ArrayList<Drink> drinks, ArrayList<Chips> chips) {
+    public Order() {
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();

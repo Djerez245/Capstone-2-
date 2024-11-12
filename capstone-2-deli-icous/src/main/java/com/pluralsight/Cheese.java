@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Cheese extends PremiumToppings implements Priceable{
+public class Cheese extends PremiumToppings implements Priceable, Topping{
     protected CheeseType cheeseType;
 
     public Cheese(BreadSize breadSize, boolean extraTopping, CheeseType cheeseType) {

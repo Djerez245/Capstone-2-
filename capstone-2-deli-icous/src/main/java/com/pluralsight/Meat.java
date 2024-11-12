@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Meat extends PremiumToppings implements Priceable {
+public class Meat extends PremiumToppings implements Priceable, Topping {
     protected MeatType meatType;
 
     public Meat(BreadSize breadSize, boolean extraTopping, MeatType meatType) {

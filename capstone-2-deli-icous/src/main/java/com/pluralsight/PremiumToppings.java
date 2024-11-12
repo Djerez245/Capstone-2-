@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public abstract class PremiumToppings extends Topping implements Priceable {
+public abstract class PremiumToppings implements Priceable, Topping {
     BreadSize breadSize;
     boolean extraTopping;
     double toppingPrice;
