@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Chips implements Priceable {
+public class Chips implements Item {
     private double price;
     public ChipsType chipsType;
 
@@ -19,4 +19,8 @@ public class Chips implements Priceable {
     }
 
 
+    @Override
+    public String toStringForCsv() {
+        return String.format("%s: $%.2f", chipsType, getPrice());
+    }
 }

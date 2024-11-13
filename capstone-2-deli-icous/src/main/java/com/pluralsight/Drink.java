@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Drink implements Priceable{
+public class Drink implements Item {
     protected DrinkSize drinkSize;
     protected double drinkPrice;
     protected DrinkType drinkType;
@@ -22,15 +22,21 @@ public class Drink implements Priceable{
     public double getPrice() {
         if (DrinkSize.SMALL == drinkSize){
             drinkPrice = 2.00;
-        }if (DrinkSize.MEDIUM == drinkSize){
+        }
+        else if (DrinkSize.MEDIUM == drinkSize){
             drinkPrice = 2.5;
         }
-        if (DrinkSize.LARGE == drinkSize){
+        else if (DrinkSize.LARGE == drinkSize){
             drinkPrice = 3.00;
         }
         else {
             drinkPrice = 0.0;
         }
         return drinkPrice;
+    }
+
+    @Override
+    public String toStringForCsv() {
+        return String.format("%s, %s: $%.2f", drinkType, drinkSize, getPrice());
     }
 }

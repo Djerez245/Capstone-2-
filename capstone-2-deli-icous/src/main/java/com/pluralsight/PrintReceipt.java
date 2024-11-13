@@ -8,12 +8,22 @@ import java.time.format.DateTimeFormatter;
 
 public class PrintReceipt {
 
-    Order order;
+    public PrintReceipt() {
+    }
 
     LocalDateTime dateTime = LocalDateTime.now();
     DateTimeFormatter fmtDateTime = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
-    String filename = "capstone-2-deli-icous/Receipts/" + dateTime.format(fmtDateTime) + ".txt";
-    FileWriter fw = new FileWriter(filename, true);
+    String filename = "src/main/resources/receipts" + dateTime.format(fmtDateTime) + ".txt";
+    FileWriter fw;
+
+    {
+        try {
+            fw = new FileWriter(filename);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     BufferedWriter bufferedWriter = new BufferedWriter(fw);
 
     String receiptHeader = ("""
@@ -22,18 +32,21 @@ public class PrintReceipt {
             =================================
             """);
 
-    public PrintReceipt() throws IOException {
-    }
 
     public void printReceiptToFile(Order o) throws IOException {
-        bufferedWriter.write(receiptHeader);
-        for (int i = 0; i < o.orders.size(); i++) {
-            bufferedWriter.write(o.orders.get(i).toStringForCsv());
-            bufferedWriter.newLine();
+        try {
+            bufferedWriter.write(receiptHeader);
+            for (Item item : o.items) {
+                bufferedWriter.write(item.toStringForCsv());
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.write("Total: " + o.getPrice());
+            bufferedWriter.flush();
+            bufferedWriter.close();
+            System.out.println("\nTHANK YOU HAVE A GOOD DAY!");
+        }catch (Exception e){
+            throw new RuntimeException(e);
         }
-        bufferedWriter.write("Total: " + o.getPrice());
-        bufferedWriter.close();
-        System.out.println("\nTHANK YOU HAVE A GOOD DAY!");
     }
 }
 

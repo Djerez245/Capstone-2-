@@ -9,7 +9,7 @@ public class UserInterfaceMethods extends DisplayScreens {
     Scanner scanner = new Scanner(System.in);
 
     Order order = new Order();
-    PrintReceipt receipt;
+    PrintReceipt receipt = new PrintReceipt();
 
     public int getIntInput(String displayScreen) {
         System.out.println(displayScreen);
@@ -175,7 +175,8 @@ public class UserInterfaceMethods extends DisplayScreens {
 
                 // Adding sauce to sandwich
                 addSauce(s);
-                order.addSandwich(s);
+                order.addItem(s);
+                System.out.println(order.items);
                 System.out.println("SANDWICH ADD\n");
 
             } catch (InputMismatchException e) {
@@ -222,7 +223,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                     if (drinkTypeInput >= 0 && drinkTypeInput < DrinkType.values().length) {
                         DrinkType selectedDrinkType = DrinkType.values()[drinkTypeInput];
                         Drink d = new Drink(selectedDrinkType, selectedDrinkSize);
-                        order.addDrink(d);
+                        order.addItem(d);
                         System.out.println("DRINK ADDED\n");
                     } else {
                         System.out.println("Invalid drink type selection. Please try again.");
@@ -267,7 +268,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                 if (chipsInput >= 0 && chipsInput < ChipsType.values().length) {
                     ChipsType selectedChipsType = ChipsType.values()[chipsInput];
                     Chips ch = new Chips(selectedChipsType);
-                    order.addChip(ch);
+                    order.addItem(ch);
                 } else {
                     System.out.println("Invalid chip type. Please try again.");
                     continue;

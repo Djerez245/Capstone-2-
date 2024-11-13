@@ -2,12 +2,14 @@ package com.pluralsight;
 
 import java.util.ArrayList;
 
-public class Sandwich implements Priceable{
+public class Sandwich implements Item {
     protected BreadType breadType;
     protected BreadSize sandwichSize;
     protected ArrayList<Topping> topping;
     protected boolean isToasted;
     protected double sandwichPrice;
+
+    Order o;
 
     public Sandwich(BreadType breadType, BreadSize sandwichSize, boolean isToasted) {
         this.breadType = breadType;
@@ -38,19 +40,25 @@ public class Sandwich implements Priceable{
 
     @Override
     public double getPrice() {
-        if (BreadSize.SMALL == sandwichSize){
+        if (BreadSize.SMALL == sandwichSize) {
             sandwichPrice = 5.5;
-            }
-        if (BreadSize.MEDIUM == sandwichSize){
+        }
+        if (BreadSize.MEDIUM == sandwichSize) {
             sandwichPrice = 7.00;
         }
-        if (BreadSize.LARGE == sandwichSize){
+        if (BreadSize.LARGE == sandwichSize) {
             sandwichPrice = 8.5;
         }
         return sandwichPrice;
     }
 
-    public void addTopping(Topping toppings){
+    public void addTopping(Topping toppings) {
         topping.add(toppings);
+    }
+
+
+    @Override
+    public String toStringForCsv() {
+        return String.format("Bread:%s\nSandwich size:%s\nToasted:%s:\nSandwich price: $%.2f", breadType, sandwichSize, isToasted, getPrice());
     }
 }
