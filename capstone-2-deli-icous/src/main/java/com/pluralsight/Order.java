@@ -1,9 +1,11 @@
 package com.pluralsight;
 
-import java.util.ArrayList;
-import java.util.stream.Collectors;
+import interfaces.Item;
+import interfaces.Priceable;
 
-public class Order implements Priceable{
+import java.util.ArrayList;
+
+public class Order implements Priceable {
 
     Sandwich sandwich;
     Chips chip;

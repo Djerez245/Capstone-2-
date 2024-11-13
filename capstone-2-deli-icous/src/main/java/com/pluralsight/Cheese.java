@@ -1,6 +1,11 @@
 package com.pluralsight;
 
-public class Cheese extends PremiumToppings implements Priceable, Topping{
+import enums.BreadSize;
+import enums.CheeseType;
+import interfaces.Priceable;
+import interfaces.Topping;
+
+public class Cheese extends PremiumToppings implements Priceable, Topping {
     protected CheeseType cheeseType;
 
     public Cheese(BreadSize breadSize, boolean extraTopping, CheeseType cheeseType) {
@@ -14,6 +19,9 @@ public class Cheese extends PremiumToppings implements Priceable, Topping{
 
     @Override
     public double getPrice() {
+        if (cheeseType == CheeseType.valueOf("NOCHEESE")){
+            toppingPrice += 0;
+        }
         if (BreadSize.SMALL == breadSize) {
             toppingPrice = .75;
             if (extraTopping) {

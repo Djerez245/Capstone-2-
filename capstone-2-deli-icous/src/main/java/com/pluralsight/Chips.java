@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import enums.ChipsType;
+import interfaces.Item;
+
 public class Chips implements Item {
     private double price;
     public ChipsType chipsType;

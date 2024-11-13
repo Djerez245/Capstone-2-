@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import enums.*;
+
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -31,11 +33,11 @@ public class UserInterfaceMethods extends DisplayScreens {
 
                     s.addTopping(new RegularTopping(selectedTopping));
 
-                    System.out.println(selectedTopping + " topping added to the sandwich!");
+                    System.out.println("\n" + ToppingType.values()[toppingInput] + " added to the sandwich!\n");
 
                 } else if (toppingInput == 9) {
                     addingToppings = false;
-                    System.out.println("No more toppings will be added.");
+                    System.out.println("\nNo more toppings will be added.");
                 } else {
                     System.out.println("Invalid topping selection. Please try again.");
                     addingToppings = false;
@@ -72,7 +74,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                 SaucesType selectedSauce = SaucesType.values()[sauceType];
                 Sauce sauce = new Sauce(selectedSauce);
                 s.addTopping(sauce);
-                System.out.println(SaucesType.values()[sauceType] + " SELECTED");
+                System.out.println("\n" + SaucesType.values()[sauceType] + " SELECTED\n");
             } else {
                 System.out.println("Invalid sauce selection. No sauce will be added.");
             }
@@ -114,7 +116,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                 // Setting sandwich bread type and size with exception handling
                 if (breadTypeInput >= 0 && breadTypeInput < BreadType.values().length) {
                     userBreadType = BreadType.values()[breadTypeInput];
-                    System.out.println(BreadType.values()[breadTypeInput] + " SELECTED!");
+                    System.out.println("\n" + BreadType.values()[breadTypeInput] + " SELECTED!\n");
                 } else {
                     System.out.println("Invalid bread type selection. Defaulting to WHITE.");
                     userBreadType = BreadType.WHITE;
@@ -122,7 +124,7 @@ public class UserInterfaceMethods extends DisplayScreens {
 
                 if (breadSizeInput >= 0 && breadSizeInput < BreadSize.values().length) {
                     userBreadSize = BreadSize.values()[breadSizeInput];
-                    System.out.println(BreadSize.values()[breadSizeInput] + " SANDWICH SIZE SELECTED!");
+                    System.out.println("\n" + BreadSize.values()[breadSizeInput] + " SANDWICH SIZE SELECTED!\n");
                 } else {
                     System.out.println("Invalid bread size selection. Defaulting to MEDIUM.");
                     userBreadSize = BreadSize.MEDIUM;
@@ -144,9 +146,9 @@ public class UserInterfaceMethods extends DisplayScreens {
                 MeatType userMeatType;
                 if (meatInput >= 0 && meatInput < MeatType.values().length) {
                     userMeatType = MeatType.values()[meatInput];
-                    System.out.println(MeatType.values()[meatInput] + " SELECTED");
+                    System.out.println("\n" + MeatType.values()[meatInput] + " SELECTED\n");
                 } else {
-                    System.out.println("Invalid meat selection. Defaulting to CHICKEN.");
+                    System.out.println("\nInvalid meat selection. Defaulting to CHICKEN.\n");
                     userMeatType = MeatType.CHICKEN;
                 }
                 boolean userExtraMeat;
@@ -163,21 +165,26 @@ public class UserInterfaceMethods extends DisplayScreens {
                 CheeseType userCheeseType;
                 if (cheeseInput >= 0 && cheeseInput < CheeseType.values().length) {
                     userCheeseType = CheeseType.values()[cheeseInput];
-                    System.out.println(CheeseType.values()[cheeseInput] + " SELECTED");
-                } else {
+                    System.out.println("\n" + CheeseType.values()[cheeseInput] + " SELECTED\n");
+                    boolean userExtraCheese;
+                    userExtraCheese = extraCheese.equalsIgnoreCase("yes");
+                    Cheese c = new Cheese(s.getSandwichSize(), userExtraCheese, userCheeseType);
+                    s.addTopping(c);
+                }
+                if (cheeseInput == 4){
+                    System.out.println("\nNO CHEESE SELECTED\n");
+                }
+                else {
                     System.out.println("Invalid cheese selection. Defaulting to CHEDDAR.");
                     userCheeseType = CheeseType.CHEDDAR;
                 }
-                boolean userExtraCheese;
-                userExtraCheese = extraCheese.equalsIgnoreCase("yes");
-                Cheese c = new Cheese(s.getSandwichSize(), userExtraCheese, userCheeseType);
-                s.addTopping(c);
+
 
                 // Adding sauce to sandwich
                 addSauce(s);
                 order.addItem(s);
                 System.out.println(order.items);
-                System.out.println("SANDWICH ADD\n");
+                System.out.println("\nSANDWICH ADDED\n");
 
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input type. Please enter a number where expected.");
@@ -224,7 +231,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                         DrinkType selectedDrinkType = DrinkType.values()[drinkTypeInput];
                         Drink d = new Drink(selectedDrinkType, selectedDrinkSize);
                         order.addItem(d);
-                        System.out.println("DRINK ADDED\n");
+                        System.out.println("\n" + DrinkType.values()[drinkTypeInput] + " SELECTED");
                     } else {
                         System.out.println("Invalid drink type selection. Please try again.");
                     }
@@ -269,6 +276,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                     ChipsType selectedChipsType = ChipsType.values()[chipsInput];
                     Chips ch = new Chips(selectedChipsType);
                     order.addItem(ch);
+                    System.out.println("\n" + ChipsType.values()[chipsInput] + " SELECTED");
                 } else {
                     System.out.println("Invalid chip type. Please try again.");
                     continue;

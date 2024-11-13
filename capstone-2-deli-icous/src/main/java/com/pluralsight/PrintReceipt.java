@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import interfaces.Item;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +15,7 @@ public class PrintReceipt {
 
     LocalDateTime dateTime = LocalDateTime.now();
     DateTimeFormatter fmtDateTime = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
-    String filename = "src/main/resources/receipts" + dateTime.format(fmtDateTime) + ".txt";
+    String filename = "Capstone-2-/capstone-2-deli-icous/src/main/resources/receipts/" + dateTime.format(fmtDateTime) + ".txt";
     FileWriter fw;
 
     {
