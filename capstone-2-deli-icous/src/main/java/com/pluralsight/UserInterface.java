@@ -45,7 +45,11 @@ public class UserInterface extends UserInterfaceMethods {
                     case 2 -> addDrink();
                     case 3 -> addChips();
                     case 4 -> checkout(order);
-                    case 5 -> ordering = false;
+                    case 0 -> {
+                        ordering = false;
+                        System.out.println("Going back home....");
+                        runApp();
+                    }
                     default -> System.out.println("Invalid input. Please select 1 - 9.");
                 }
             } catch (InputMismatchException e) {

@@ -176,6 +176,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                 // Adding sauce to sandwich
                 addSauce(s);
                 order.addSandwich(s);
+                System.out.println("SANDWICH ADD\n");
 
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input type. Please enter a number where expected.");
@@ -222,7 +223,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                         DrinkType selectedDrinkType = DrinkType.values()[drinkTypeInput];
                         Drink d = new Drink(selectedDrinkType, selectedDrinkSize);
                         order.addDrink(d);
-                        System.out.println("DRINK ADDED");
+                        System.out.println("DRINK ADDED\n");
                     } else {
                         System.out.println("Invalid drink type selection. Please try again.");
                     }
@@ -298,11 +299,17 @@ public class UserInterfaceMethods extends DisplayScreens {
                     receipt.printReceiptToFile(o);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
+                } catch (NullPointerException nullPointerException){
+                    System.out.println("Sorry your order is empty");
                 }
             }
+            try{
             if (checkoutInput == 1) {
                 order.removeOrder(o);
             }
+            }catch (NullPointerException nullPointerException){
+            System.out.println("Sorry your order is empty");
+        }
 
         }
 }

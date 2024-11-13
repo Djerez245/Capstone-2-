@@ -20,8 +20,7 @@ public class DisplayScreens {
                 (1) ADD A SANDWICH
                 (2) ADD A DRINK
                 (3) ADD CHIPS
-                (4) ADD A SIDE
-                (5) CHECKOUT
+                (4) CHECKOUT
                 (0) CANCEL ORDER
                 """);
     }
