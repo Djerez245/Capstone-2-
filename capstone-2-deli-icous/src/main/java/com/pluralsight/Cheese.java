@@ -19,7 +19,7 @@ public class Cheese extends PremiumToppings implements Priceable, Topping {
 
     @Override
     public double getPrice() {
-        if (cheeseType == CheeseType.valueOf("NOCHEESE")){
+        if (cheeseType == CheeseType.NOCHEESE){
             toppingPrice += 0;
         }
         if (BreadSize.SMALL == breadSize) {

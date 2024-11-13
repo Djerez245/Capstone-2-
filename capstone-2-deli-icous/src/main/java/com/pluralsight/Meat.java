@@ -19,6 +19,9 @@ public class Meat extends PremiumToppings implements Priceable, Topping {
 
     @Override
     public double getPrice() {
+        if (meatType == MeatType.NOMEAT){
+            toppingPrice += 0;
+        }
         if (BreadSize.SMALL == breadSize){
             toppingPrice = 1.00;
             if (extraTopping){

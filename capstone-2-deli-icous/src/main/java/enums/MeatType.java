@@ -6,5 +6,6 @@ public enum MeatType {
     SALAMI,
     ROASTBEEF,
     CHICKEN,
-    BACON
+    BACON,
+    NOMEAT
 }

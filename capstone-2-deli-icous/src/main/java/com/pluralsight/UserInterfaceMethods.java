@@ -144,17 +144,22 @@ public class UserInterfaceMethods extends DisplayScreens {
 
                 // Adding meat with extra option
                 MeatType userMeatType;
-                if (meatInput >= 0 && meatInput < MeatType.values().length) {
+                if (meatInput == 6) {
+                    System.out.println("NO MEAT SELECTED");
+                }
+                else if (meatInput >= 0 && meatInput < 5 && meatInput < MeatType.values().length) {
                     userMeatType = MeatType.values()[meatInput];
                     System.out.println("\n" + MeatType.values()[meatInput] + " SELECTED\n");
-                } else {
+                    boolean userExtraMeat;
+                    userExtraMeat = extraMeat.equalsIgnoreCase("yes");
+                    s.addTopping(new Meat(s.getSandwichSize(), userExtraMeat, userMeatType));
+                }
+
+                else {
                     System.out.println("\nInvalid meat selection. Defaulting to CHICKEN.\n");
                     userMeatType = MeatType.CHICKEN;
                 }
-                boolean userExtraMeat;
-                userExtraMeat = extraMeat.equalsIgnoreCase("yes");
 
-                s.addTopping(new Meat(s.getSandwichSize(), userExtraMeat, userMeatType));
 
                 int cheeseInput = getIntInput(displayCheese());
 
@@ -163,17 +168,18 @@ public class UserInterfaceMethods extends DisplayScreens {
 
                 // Adding cheese with extra option
                 CheeseType userCheeseType;
-                if (cheeseInput >= 0 && cheeseInput < CheeseType.values().length) {
+                if (cheeseInput == 4){
+                    System.out.println("\nNO CHEESE SELECTED\n");
+                }
+                else if (cheeseInput >= 0 && cheeseInput < CheeseType.values().length) {
                     userCheeseType = CheeseType.values()[cheeseInput];
-                    System.out.println("\n" + CheeseType.values()[cheeseInput] + " SELECTED\n");
+                    System.out.println("\n" + CheeseType.values()[cheeseInput] + "SELECTED\n");
                     boolean userExtraCheese;
                     userExtraCheese = extraCheese.equalsIgnoreCase("yes");
                     Cheese c = new Cheese(s.getSandwichSize(), userExtraCheese, userCheeseType);
                     s.addTopping(c);
                 }
-                if (cheeseInput == 4){
-                    System.out.println("\nNO CHEESE SELECTED\n");
-                }
+
                 else {
                     System.out.println("Invalid cheese selection. Defaulting to CHEDDAR.");
                     userCheeseType = CheeseType.CHEDDAR;
@@ -231,7 +237,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                         DrinkType selectedDrinkType = DrinkType.values()[drinkTypeInput];
                         Drink d = new Drink(selectedDrinkType, selectedDrinkSize);
                         order.addItem(d);
-                        System.out.println("\n" + DrinkType.values()[drinkTypeInput] + " SELECTED");
+                        System.out.println("\n" + DrinkType.values()[drinkTypeInput] + " SELECTED\n");
                     } else {
                         System.out.println("Invalid drink type selection. Please try again.");
                     }
