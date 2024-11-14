@@ -1,4 +1,8 @@
 =================================
             RECEIPT
 =================================
-Total: 0.0
+Bread:RYE
+Sandwich size:MEDIUM
+Toasted:true:
+Sandwich price: $7.00
+Total: 7.0

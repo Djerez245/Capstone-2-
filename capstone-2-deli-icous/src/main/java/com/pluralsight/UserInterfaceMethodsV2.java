@@ -12,7 +12,7 @@ public class UserInterfaceMethodsV2 extends DisplayScreensV2 {
 
     Order order = new Order();
     PrintReceipt receipt = new PrintReceipt();
-    MakingASandwich makeSandwich;
+
 
     public int getIntInput(String displayScreen) {
         System.out.println(displayScreen);
@@ -24,12 +24,13 @@ public class UserInterfaceMethodsV2 extends DisplayScreensV2 {
     public String getStringInput(String displayScreen){
         System.out.println(displayScreen);
         String input = scanner.nextLine();
-        scanner.nextLine();
+        // scanner.nextLine();
         return input;
     }
 
     // adding sandwich and toppings
     public void addSandwich() {
+        MakingASandwich makeSandwich = new MakingASandwich();
         int selectSandwich = getIntInput(chooseSandwich());
         if (selectSandwich == 1) {
             addBlt();
@@ -38,6 +39,7 @@ public class UserInterfaceMethodsV2 extends DisplayScreensV2 {
             System.out.println("not done yet");
         }
         if (selectSandwich == 3) {
+
             boolean addingSandwich = true;
             while (addingSandwich) {
                 try {
@@ -48,13 +50,6 @@ public class UserInterfaceMethodsV2 extends DisplayScreensV2 {
                     String toastedString = getStringInput(toastedOrNo());
                     boolean toasted = toastedString.equalsIgnoreCase("yes");
 
-                    if (breadTypeInput >= 0 && breadTypeInput < BreadType.values().length) {
-                        BreadType userBreadType = BreadType.values()[breadTypeInput];  // Set instance variable
-                        System.out.println("\n" + userBreadType + " SELECTED!\n");
-                    } else {
-                        System.out.println("Invalid bread type selection. Defaulting to WHITE.");
-                        BreadType userBreadType = BreadType.WHITE;  // Default value
-                    }
 
                     makeSandwich.chooseBreadType(breadTypeInput);
                     makeSandwich.chooseBreadSize(breadSizeInput);
@@ -70,35 +65,21 @@ public class UserInterfaceMethodsV2 extends DisplayScreensV2 {
                     int meatInput = getIntInput(displayMeats());
 
                     // getting user input to add meat and cheese
-                    String extraMeatString = getStringInput(askForExtraMeat());
-                    boolean extraMeat = extraMeatString.equalsIgnoreCase("yes");
+
 
                     // Adding meat with extra option
-                    makeSandwich.chooseMeatType(meatInput, s, extraMeat);
+                    makeSandwich.chooseMeatType(meatInput, s);
 
                     int cheeseInput = getIntInput(displayCheese());
 
-                    String extraCheese = getStringInput(askForExtraCheese());
+                    String extraCheeseString = getStringInput(askForExtraCheese());
+                    boolean extraCheese = extraCheeseString.equalsIgnoreCase("yes");
 
                     // Adding cheese with extra option
-                    CheeseType userCheeseType;
-                    if (cheeseInput == 4) {
-                        System.out.println("\nNO CHEESE SELECTED\n");
-                    } else if (cheeseInput >= 0 && cheeseInput < CheeseType.values().length) {
-                        userCheeseType = CheeseType.values()[cheeseInput];
-                        System.out.println("\n" + CheeseType.values()[cheeseInput] + "SELECTED\n");
-                        boolean userExtraCheese;
-                        userExtraCheese = extraCheese.equalsIgnoreCase("yes");
-                        Cheese c = new Cheese(s.getSandwichSize(), userExtraCheese, userCheeseType);
-                        s.addTopping(c);
-                    } else {
-                        System.out.println("Invalid cheese selection. Defaulting to CHEDDAR.");
-                        userCheeseType = CheeseType.CHEDDAR;
-                    }
+                   makeSandwich.chooseCheeseType(cheeseInput,s, extraCheese);
                     // Adding sauce to sandwich
                     makeSandwich.addSauce(s);
                     order.addItem(s);
-                    System.out.println(order.items);
                     System.out.println("\nSANDWICH ADDED\n");
 
                 } catch (InputMismatchException e) {
@@ -218,6 +199,7 @@ public class UserInterfaceMethodsV2 extends DisplayScreensV2 {
     }
 
     public void checkout(Order o) {
+
         int checkoutInput = getIntInput(displayCheckout());
         if (checkoutInput == 0) {
             try {
@@ -239,6 +221,7 @@ public class UserInterfaceMethodsV2 extends DisplayScreensV2 {
     }
 
     public void addBlt() {
+        MakingASandwich makeSandwich = new MakingASandwich();
 
         BreadType userBreadType = BreadType.WHITE;
         BreadSize userBreadSize = BreadSize.MEDIUM;

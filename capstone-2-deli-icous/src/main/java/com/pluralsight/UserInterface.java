@@ -3,14 +3,14 @@ package com.pluralsight;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UserInterface extends UserInterfaceMethods {
+public class UserInterface extends UserInterfaceMethodsV2{
 
 
     Scanner scanner = new Scanner(System.in);
 
     public void runApp() {
-        DisplayScreens.displayHeader();
-        DisplayScreens.displayHomeScreen();
+        DisplayScreensV2.displayHeader();
+        DisplayScreensV2.displayHomeScreen();
         boolean deliOpen = true;
         while (deliOpen) {
             try {
@@ -37,8 +37,8 @@ public class UserInterface extends UserInterfaceMethods {
         boolean ordering = true;
         while (ordering) {
             try {
-                DisplayScreens.displayHeader();
-                DisplayScreens.displayOrderScreen();
+                DisplayScreensV2.displayHeader();
+                DisplayScreensV2.displayOrderScreen();
                 int input = scanner.nextInt();
                 scanner.nextLine();
                 switch (input) {
