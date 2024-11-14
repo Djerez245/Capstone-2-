@@ -3,12 +3,11 @@ package com.pluralsight;
 import enums.BreadSize;
 import enums.BreadType;
 
+public class Philly extends Sandwich {
 
-public class BLT extends Sandwich{
-    public BLT(BreadType breadType, BreadSize sandwichSize, boolean isToasted) {
+    public Philly(BreadType breadType, BreadSize sandwichSize, boolean isToasted) {
         super(breadType, sandwichSize, isToasted);
     }
-
 
     @Override
     public void setBreadType(BreadType breadType) {

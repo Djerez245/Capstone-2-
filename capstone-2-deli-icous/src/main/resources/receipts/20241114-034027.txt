@@ -1,7 +1,7 @@
 =================================
             RECEIPT
 =================================
-Bread:RYE
+Bread:WHITE
 Sandwich size:MEDIUM
 Toasted:true:
 Sandwich price: $7.00

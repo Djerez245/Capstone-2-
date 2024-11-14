@@ -1,8 +1,0 @@
-=================================
-            RECEIPT
-=================================
-Bread:WHEAT
-Sandwich size:LARGE
-Toasted:false:
-Sandwich price: $8.50
-Total: 8.5

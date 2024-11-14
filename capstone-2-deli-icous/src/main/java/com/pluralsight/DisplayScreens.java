@@ -26,7 +26,7 @@ public class DisplayScreens {
     }
 
     public static void displayHomeScreen(){
-        System.out.println("""
+        System.out.println( """
                 (1) NEW ORDER
                 (2) EXIT
                 """);
@@ -76,8 +76,8 @@ public class DisplayScreens {
                 (6) NO MEAT
                 """;
     }
-    public static void askForExtraMeat(){
-        System.out.println("WOULD YOU LIKE EXTRA MEAT?");
+    public static String askForExtraMeat(){
+        return "WOULD YOU LIKE EXTRA MEAT?";
     }
 
     public static String displayCheese(){
@@ -91,8 +91,8 @@ public class DisplayScreens {
                 """;
     }
 
-    public static void askForExtraCheese(){
-        System.out.println("WOULD YOU LIKE EXTRA CHEESE?");
+    public static String askForExtraCheese(){
+        return "WOULD YOU LIKE EXTRA CHEESE?";
     }
 
     public static String displaySauces(){
@@ -109,8 +109,8 @@ public class DisplayScreens {
                 """;
     }
 
-    public static void moreSauce(){
-        System.out.println("WOULD YOU LIKE TO ADD MORE SAUCE?");
+    public static String moreSauce(){
+        return  "WOULD YOU LIKE TO ADD MORE SAUCE?";
     }
 
     public static String whatToppings(){
@@ -130,16 +130,16 @@ public class DisplayScreens {
                 """;
     }
 
-    public static void moreToppings(){
-        System.out.println("WOULD YOU LIKE TO ADD MORE TOPPINGS?");
+    public static String moreToppings(){
+        return  "WOULD YOU LIKE TO ADD MORE TOPPINGS?";
     }
 
-    public static void toastedOrNo(){
-        System.out.println("WOULD YOU LIKE IT TOASTED (YES OR NO)?");
+    public static String toastedOrNo(){
+        return  "WOULD YOU LIKE IT TOASTED (YES OR NO)?";
     }
 
-    public static void anotherSandwich(){
-        System.out.println("WOULD YOU LIKE TO ADD ANOTHER SANDWICH (YES OR NO)?");
+    public static String anotherSandwich(){
+        return  "WOULD YOU LIKE TO ADD ANOTHER SANDWICH (YES OR NO)?";
     }
 
     public static String typeOfChips(){
@@ -152,8 +152,8 @@ public class DisplayScreens {
                 """;
     }
 
-    public static void moreChips(){
-        System.out.println("WOULD YOU LIKE TO ADD MORE CHIPS?");
+    public static String moreChips(){
+        return  "WOULD YOU LIKE TO ADD MORE CHIPS?";
     }
 
     public static String whatDrinkSize(){
@@ -180,8 +180,8 @@ public class DisplayScreens {
                 """;
     }
 
-    public static void moreDrink(){
-        System.out.println("WOULD YOU LIKE ANOTHER DRINK?");
+    public static String moreDrink(){
+         return  "WOULD YOU LIKE ANOTHER DRINK?";
     }
 
     public static String displayCheckout(){
@@ -193,3 +193,4 @@ public class DisplayScreens {
     }
 
 }
+
