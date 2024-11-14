@@ -1,7 +1,7 @@
 package com.pluralsight;
 
-import enums.ToppingType;
-import interfaces.Topping;
+import com.pluralsight.enums.ToppingType;
+import com.pluralsight.interfaces.Topping;
 
 public class RegularTopping implements Topping {
     ToppingType toppingType;

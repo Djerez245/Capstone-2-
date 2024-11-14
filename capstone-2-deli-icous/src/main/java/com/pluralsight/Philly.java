@@ -1,7 +1,7 @@
 package com.pluralsight;
 
-import enums.BreadSize;
-import enums.BreadType;
+import com.pluralsight.enums.BreadSize;
+import com.pluralsight.enums.BreadType;
 
 public class Philly extends Sandwich {
 

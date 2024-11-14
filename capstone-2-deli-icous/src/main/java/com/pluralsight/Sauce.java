@@ -1,7 +1,7 @@
 package com.pluralsight;
 
-import enums.SaucesType;
-import interfaces.Topping;
+import com.pluralsight.enums.SaucesType;
+import com.pluralsight.interfaces.Topping;
 
 public class Sauce implements Topping {
     SaucesType sauceType;

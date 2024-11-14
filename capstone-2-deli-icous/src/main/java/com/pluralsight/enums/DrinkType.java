@@ -1,4 +1,4 @@
-package enums;
+package com.pluralsight.enums;
 
 public enum DrinkType {
     WATER,

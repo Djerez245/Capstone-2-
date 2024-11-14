@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-import interfaces.Item;
+import com.pluralsight.interfaces.Item;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

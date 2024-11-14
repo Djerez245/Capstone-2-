@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-import enums.*;
+import com.pluralsight.enums.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

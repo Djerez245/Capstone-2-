@@ -1,8 +1,8 @@
 package com.pluralsight;
 
-import enums.DrinkSize;
-import enums.DrinkType;
-import interfaces.Item;
+import com.pluralsight.enums.DrinkSize;
+import com.pluralsight.enums.DrinkType;
+import com.pluralsight.interfaces.Item;
 
 public class Drink implements Item {
     protected DrinkSize drinkSize;

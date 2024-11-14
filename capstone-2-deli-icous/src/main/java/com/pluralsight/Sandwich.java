@@ -1,9 +1,9 @@
 package com.pluralsight;
 
-import enums.BreadSize;
-import enums.BreadType;
-import interfaces.Item;
-import interfaces.Topping;
+import com.pluralsight.enums.BreadSize;
+import com.pluralsight.enums.BreadType;
+import com.pluralsight.interfaces.Item;
+import com.pluralsight.interfaces.Topping;
 
 import java.util.ArrayList;
 

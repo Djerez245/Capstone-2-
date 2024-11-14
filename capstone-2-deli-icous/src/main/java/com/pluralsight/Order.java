@@ -1,7 +1,7 @@
 package com.pluralsight;
 
-import interfaces.Item;
-import interfaces.Priceable;
+import com.pluralsight.interfaces.Item;
+import com.pluralsight.interfaces.Priceable;
 
 import java.util.ArrayList;
 

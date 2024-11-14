@@ -1,9 +1,9 @@
 package com.pluralsight;
 
-import enums.BreadSize;
-import enums.MeatType;
-import interfaces.Priceable;
-import interfaces.Topping;
+import com.pluralsight.enums.BreadSize;
+import com.pluralsight.enums.MeatType;
+import com.pluralsight.interfaces.Priceable;
+import com.pluralsight.interfaces.Topping;
 
 public class Meat extends PremiumToppings implements Priceable, Topping {
     protected MeatType meatType;

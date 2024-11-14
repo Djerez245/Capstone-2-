@@ -1,8 +1,8 @@
 package com.pluralsight;
 
-import enums.BreadSize;
-import interfaces.Priceable;
-import interfaces.Topping;
+import com.pluralsight.enums.BreadSize;
+import com.pluralsight.interfaces.Priceable;
+import com.pluralsight.interfaces.Topping;
 
 public abstract class PremiumToppings implements Priceable, Topping {
     protected BreadSize breadSize;

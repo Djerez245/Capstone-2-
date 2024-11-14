@@ -1,10 +1,10 @@
 package com.pluralsight;
 
-import enums.*;
+import com.pluralsight.enums.*;
 
 import static com.pluralsight.DisplayScreens.*;
 
-public class MakingASandwich  {
+public class MakingASandwich {
     private BreadType userBreadType;
     private BreadSize userBreadSize;
 
@@ -21,7 +21,6 @@ public class MakingASandwich  {
 
     UserInterfaceMethods user = new UserInterfaceMethods();
     Order order = new Order();
-
 
 
     public void addRegularToppingToSandwich(Sandwich s) {
@@ -73,8 +72,7 @@ public class MakingASandwich  {
             int sauceType = user.getIntInput(displaySauces());
             if (sauceType == 6) {
                 addingSauce = false;
-            }
-            else if (sauceType >= 0 && sauceType < SaucesType.values().length) {
+            } else if (sauceType >= 0 && sauceType < SaucesType.values().length) {
                 SaucesType selectedSauce = SaucesType.values()[sauceType];
                 Sauce sauce = new Sauce(selectedSauce);
                 s.addTopping(sauce);
@@ -120,7 +118,7 @@ public class MakingASandwich  {
         }
     }
 
-    public void chooseMeatType(int meatTypeInput, Sandwich s){
+    public void chooseMeatType(int meatTypeInput, Sandwich s) {
 
         // Adding meat with extra option
         if (meatTypeInput == 6) {
@@ -156,7 +154,6 @@ public class MakingASandwich  {
     }
 
 
-
     public void addPhilly() {
         String changeSandwich = user.getStringInput("WOULD YOU LIKE TO KEEP THE SANDWICH THE SAME?");
 
@@ -164,9 +161,9 @@ public class MakingASandwich  {
             BreadType userBreadType = BreadType.WHITE;
             BreadSize userBreadSize = BreadSize.MEDIUM;
             Sandwich b = new Sandwich(userBreadType, userBreadSize, true);
-            b.addTopping(new Meat(userBreadSize,true, MeatType.STEAK));
+            b.addTopping(new Meat(userBreadSize, true, MeatType.STEAK));
             b.addTopping(new RegularTopping(ToppingType.PEPPERS));
-            b.addTopping(new Cheese(userBreadSize,true, CheeseType.AMERICAN));
+            b.addTopping(new Cheese(userBreadSize, true, CheeseType.AMERICAN));
             b.addTopping(new Sauce(SaucesType.MAYO));
             order.addItem(b);
 

@@ -1,7 +1,7 @@
 package com.pluralsight;
 
-import enums.DrinkSize;
-import enums.DrinkType;
+import com.pluralsight.enums.DrinkSize;
+import com.pluralsight.enums.DrinkType;
 
 public class CreateADrink {
     DrinkSize selectedDrinkSize;
