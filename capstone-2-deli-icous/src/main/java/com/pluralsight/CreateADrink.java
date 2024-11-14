@@ -22,10 +22,10 @@ public class CreateADrink {
     public void chooseDrink(int drinkSizeInput, int drinkTypeInput){
 
         if (drinkSizeInput >= 0 && drinkSizeInput < DrinkSize.values().length) {
-            DrinkSize selectedDrinkSize = DrinkSize.values()[drinkSizeInput];
+            selectedDrinkSize = DrinkSize.values()[drinkSizeInput];
 
             if (drinkTypeInput >= 0 && drinkTypeInput < DrinkType.values().length) {
-                DrinkType selectedDrinkType = DrinkType.values()[drinkTypeInput];
+                selectedDrinkType = DrinkType.values()[drinkTypeInput];
 
                 System.out.println("\n" + DrinkType.values()[drinkTypeInput] + " SELECTED\n");
                 System.out.println();

@@ -112,8 +112,6 @@ public class UserInterfaceMethods extends DisplayScreens {
                 Drink d = new Drink(userDrinkType, userDrinkSize);
                 order.addItem(d);
 
-                System.out.println(order.items);
-
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number.");
             } catch (NullPointerException e) {
