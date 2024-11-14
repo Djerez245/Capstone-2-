@@ -388,8 +388,8 @@ public class UserInterfaceMethods extends DisplayScreens {
                 userExtraMeat = extraMeat.equalsIgnoreCase("yes");
                 b.addTopping(new Meat(b.getSandwichSize(), userExtraMeat, userMeatType));
             } else {
-                System.out.println("\nInvalid meat selection. Defaulting to CHICKEN.\n");
-                userMeatType = MeatType.CHICKEN;
+                System.out.println("\nInvalid meat selection. Defaulting to BACON.\n");
+                userMeatType = MeatType.BACON;
             }
         }
 

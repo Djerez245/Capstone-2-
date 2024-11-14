@@ -11,7 +11,4 @@ public enum BreadSize {
         this.description = description;
     }
 
-    public String getDescription() {
-        return description;
-    }
 }
