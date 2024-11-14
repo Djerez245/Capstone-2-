@@ -1,0 +1,149 @@
+[33mcommit 7cfdf63527bde9d1255d79e510c0b60684d13591[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mOOP_Methods[m[33m, [m[1;31morigin/OOP_Methods[m[33m)[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Thu Nov 14 00:24:14 2024 -0500
+
+    delete extra files
+
+[33mcommit c2b07dd96e04bf1952e9ece89297cf7fed3e74f5[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Wed Nov 13 23:41:12 2024 -0500
+
+    delete extra files
+
+[33mcommit 8ce955690f8a361481ea13e3c7aff09b9beaaf29[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Wed Nov 13 23:40:25 2024 -0500
+
+    working on making methods to break up the add sandwich method
+
+[33mcommit 90a653ba7b1c549db1b5004f1a9b5c0949e472c6[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mgui[m[33m)[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Wed Nov 13 19:03:57 2024 -0500
+
+    created method and class to create a BLT
+
+[33mcommit b739327d9cedca4ea5e4e3991de6b3648f94e5d6[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Wed Nov 13 16:45:37 2024 -0500
+
+    tried to fix issue where is user ask for no meat or cheese they dont get asked for more
+
+[33mcommit 17e65569b7ddf88aeecc2e2c85a7f7dc818dee5e[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Wed Nov 13 16:26:41 2024 -0500
+
+    touched up user interface
+
+[33mcommit 3f2099ff08e90b9c538c968028872dad0e714094[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Wed Nov 13 15:58:30 2024 -0500
+
+    made an orders items instead of multiple array and made an interface for Item and extended pricable and remade print receipt method
+
+[33mcommit 0436938b25150d879f343c5754ad6f118eb67d1e[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Wed Nov 13 13:10:13 2024 -0500
+
+    touched up user interface and made the to string for file
+
+[33mcommit 14e0830c3342db4236a8906deb7ce146a4a46835[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Tue Nov 12 16:10:17 2024 -0500
+
+    did some exception handling
+
+[33mcommit 6e70cc8fe51e53540b0b2b9470028c784ee32c72[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Tue Nov 12 15:37:45 2024 -0500
+
+    created the print receipt class and fixed my issues with making a sandwich
+
+[33mcommit 1dc644c024c068f079dccb7e5f0d2d070ba14588[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Tue Nov 12 09:35:00 2024 -0500
+
+    fixed null pointer bug
+
+[33mcommit 508165d711c76c79864068578b06c05c27542269[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Fri Nov 8 18:41:41 2024 -0500
+
+    still having null pointer exceptions
+
+[33mcommit d055b95e6134fdfb864313beb3d3eafb321b9dd0[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Fri Nov 8 14:57:58 2024 -0500
+
+    fixed issue with methods throwing null pointer exception and turned display screens into strings
+
+[33mcommit f5f2581236f9c6fc7c6d7ae632a53e96bb094bf1[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Thu Nov 7 23:56:38 2024 -0500
+
+    added main menu to user interface
+
+[33mcommit dd788a04bda18dd9656061d6adfd060b8a83065e[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Thu Nov 7 23:36:31 2024 -0500
+
+    added add drink and add chips method
+
+[33mcommit 1d2f168d3cd0b50ac88260089bff40e561378b78[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Thu Nov 7 18:47:50 2024 -0500
+
+    made method to take user input to make a sandwich with toppings
+
+[33mcommit 12de4a05ec66427230cd5b451721973053ca087d[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Thu Nov 7 16:36:31 2024 -0500
+
+    added more screens
+
+[33mcommit a96a86ca8a439797661ff93a46c364a121921a49[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Thu Nov 7 16:26:29 2024 -0500
+
+    made display screens
+
+[33mcommit d76b373eee7c30d52ee84212869855390be6a547[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Thu Nov 7 15:09:54 2024 -0500
+
+    finished pricing
+
+[33mcommit 88772fda531535bcd9d1d1db0d33f612c2161f9a[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Thu Nov 7 10:03:16 2024 -0500
+
+    restructured classes
+
+[33mcommit bd6bde4404f8444b40f52313a56077f6a4df9ede[m
+Author: Damian <jerezdamian640@gmail.com>
+Date:   Wed Nov 6 21:55:16 2024 -0500
+
+    added contructors and getters
+
+[33mcommit 2cd73bd8819118ba0baef79c9c2e3fcd4d1150f3[m
+Author: Damian Jerez <jerezdamian640@gmail.com>
+Date:   Wed Nov 6 16:00:05 2024 -0500
+
+    saving for clone to desktop
+
+[33mcommit 555272804af3a7e68648c017bdc1e4bd2b20e059[m
+Author: Damian Jerez <jerezdamian640@gmail.com>
+Date:   Wed Nov 6 15:38:09 2024 -0500
+
+    update classes
+
+[33mcommit b1d8390356e87d78e71bc94dcc49c3f6364af7c4[m
+Author: Damian Jerez <jerezdamian640@gmail.com>
+Date:   Wed Nov 6 14:51:20 2024 -0500
+
+    created classes
+
+[33mcommit 094ac44c6b81984d36e230ea3f2b735f0c2b2a52[m
+Author: Damian Jerez <jerezdamian640@gmail.com>
+Date:   Wed Nov 6 14:37:21 2024 -0500
+
+    first commit
