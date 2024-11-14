@@ -14,7 +14,6 @@ public class Sandwich implements Item {
     protected boolean isToasted;
     protected double sandwichPrice;
 
-    Order o;
 
     public Sandwich(BreadType breadType, BreadSize sandwichSize, boolean isToasted) {
         this.breadType = breadType;
@@ -23,24 +22,8 @@ public class Sandwich implements Item {
         topping = new ArrayList<>();
     }
 
-    public BreadType getBreadType() {
-        return breadType;
-    }
-
     public BreadSize getSandwichSize() {
         return sandwichSize;
-    }
-
-    public ArrayList<Topping> getTopping() {
-        return topping;
-    }
-
-    public boolean isToasted() {
-        return isToasted;
-    }
-
-    public double getSandwichPrice() {
-        return sandwichPrice;
     }
 
     public void setBreadType(BreadType breadType) {
@@ -51,16 +34,8 @@ public class Sandwich implements Item {
         this.sandwichSize = sandwichSize;
     }
 
-    public void setTopping(ArrayList<Topping> topping) {
-        this.topping = topping;
-    }
-
     public void setToasted(boolean toasted) {
         isToasted = toasted;
-    }
-
-    public void setSandwichPrice(double sandwichPrice) {
-        this.sandwichPrice = sandwichPrice;
     }
 
     @Override

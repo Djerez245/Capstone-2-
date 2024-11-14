@@ -9,10 +9,11 @@ public class UserInterface extends UserInterfaceMethods {
     Scanner scanner = new Scanner(System.in);
 
     public void runApp() {
-        DisplayScreens.displayHeader();
-        DisplayScreens.displayHomeScreen();
+
         boolean deliOpen = true;
         while (deliOpen) {
+            DisplayScreens.displayHeader();
+            DisplayScreens.displayHomeScreen();
             try {
                 int homeInput = scanner.nextInt();
                 scanner.nextLine();
@@ -32,6 +33,7 @@ public class UserInterface extends UserInterfaceMethods {
     }
 
 
+
     public void orderMenu() {
         boolean ordering = true;
         while (ordering) {
@@ -48,7 +50,6 @@ public class UserInterface extends UserInterfaceMethods {
                     case 0 -> {
                         ordering = false;
                         System.out.println("Going back home....");
-                        runApp();
                     }
                     default -> System.out.println("Invalid input. Please select 1 - 9.");
                 }
@@ -58,4 +59,5 @@ public class UserInterface extends UserInterfaceMethods {
             }
         }
     }
+
 }

@@ -7,10 +7,6 @@ import java.util.ArrayList;
 
 public class Order implements Priceable {
 
-    Sandwich sandwich;
-    Chips chip;
-    Drink drink;
-
     protected ArrayList<Item> items;
     private double price;
 
