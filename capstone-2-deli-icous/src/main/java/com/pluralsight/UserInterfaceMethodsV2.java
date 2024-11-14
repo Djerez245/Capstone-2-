@@ -6,11 +6,13 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UserInterfaceMethods extends DisplayScreens {
+public class UserInterfaceMethodsV2 extends DisplayScreensV2 {
+
     Scanner scanner = new Scanner(System.in);
 
     Order order = new Order();
     PrintReceipt receipt = new PrintReceipt();
+    MakingASandwich makeSandwich;
 
     public int getIntInput(String displayScreen) {
         System.out.println(displayScreen);
@@ -19,81 +21,12 @@ public class UserInterfaceMethods extends DisplayScreens {
         return input;
     }
 
-    public void addRegularToppingToSandwich(Sandwich s) {
-        boolean addingToppings = true;
-        while (addingToppings) {
-            try {
-                // Display available toppings and get user input
-                int toppingInput = getIntInput(whatToppings());
-
-                // Check if the input is valid
-                if (toppingInput >= 0 && toppingInput < ToppingType.values().length) {
-                    ToppingType selectedTopping = ToppingType.values()[toppingInput];
-
-                    s.addTopping(new RegularTopping(selectedTopping));
-
-                    System.out.println("\n" + ToppingType.values()[toppingInput] + " added to the sandwich!\n");
-
-                } else if (toppingInput == 9) {
-                    addingToppings = false;
-                    System.out.println("\nNo more toppings will be added.");
-                } else {
-                    System.out.println("Invalid topping selection. Please try again.");
-                    addingToppings = false;
-                }
-
-            } catch (Exception e) {
-                System.out.println("An error occurred while adding a topping: " + e.getMessage());
-            }
-            moreToppings();
-            String moreToppingInput = scanner.nextLine();
-
-            if (moreToppingInput.equalsIgnoreCase("no")) {
-                addingToppings = false;
-
-                System.out.println("\nNo more toppings will be added.\n");
-
-            } else if (moreToppingInput.equalsIgnoreCase("yes")) {
-                System.out.println("\nAdding another topping...\n");
-
-            } else {
-                System.out.println("Invalid input");
-            }
-        }
+    public String getStringInput(String displayScreen){
+        System.out.println(displayScreen);
+        String input = scanner.nextLine();
+        scanner.nextLine();
+        return input;
     }
-
-    public void addSauce(Sandwich s) {
-        boolean addingSauce = true;
-        while (addingSauce) {
-            int sauceType = getIntInput(displaySauces());
-            if (sauceType == 0) {
-                addingSauce = false;
-            }
-            if (sauceType >= 0 && sauceType < SaucesType.values().length) {
-                SaucesType selectedSauce = SaucesType.values()[sauceType];
-                Sauce sauce = new Sauce(selectedSauce);
-                s.addTopping(sauce);
-                System.out.println("\n" + SaucesType.values()[sauceType] + " SELECTED\n");
-            } else {
-                System.out.println("Invalid sauce selection. No sauce will be added.");
-            }
-            moreSauce();
-            String moreSauceInput = scanner.nextLine();
-
-            if (moreSauceInput.equalsIgnoreCase("no")) {
-                addingSauce = false;
-
-                System.out.println("\nNo more sauce will be added.\n");
-
-            } else if (moreSauceInput.equalsIgnoreCase("yes")) {
-                System.out.println("\nAdding another Sauce...\n");
-                addingSauce = true;
-            } else {
-                System.out.println("Invalid input");
-            }
-        }
-    }
-
 
     // adding sandwich and toppings
     public void addSandwich() {
@@ -112,61 +45,40 @@ public class UserInterfaceMethods extends DisplayScreens {
                     int breadTypeInput = getIntInput(displaySelectBreadType());
                     int breadSizeInput = getIntInput(displaySelectBreadSize());
 
-                    toastedOrNo();
-                    String toasted = scanner.nextLine();
+                    String toastedString = getStringInput(toastedOrNo());
+                    boolean toasted = toastedString.equalsIgnoreCase("yes");
 
-                    BreadType userBreadType;
-                    BreadSize userBreadSize;
-                    boolean userToasted;
-
-                    // Setting sandwich bread type and size with exception handling
                     if (breadTypeInput >= 0 && breadTypeInput < BreadType.values().length) {
-                        userBreadType = BreadType.values()[breadTypeInput];
-                        System.out.println("\n" + BreadType.values()[breadTypeInput] + " SELECTED!\n");
+                        BreadType userBreadType = BreadType.values()[breadTypeInput];  // Set instance variable
+                        System.out.println("\n" + userBreadType + " SELECTED!\n");
                     } else {
                         System.out.println("Invalid bread type selection. Defaulting to WHITE.");
-                        userBreadType = BreadType.WHITE;
+                        BreadType userBreadType = BreadType.WHITE;  // Default value
                     }
 
-                    if (breadSizeInput >= 0 && breadSizeInput < BreadSize.values().length) {
-                        userBreadSize = BreadSize.values()[breadSizeInput];
-                        System.out.println("\n" + BreadSize.values()[breadSizeInput] + " SANDWICH SIZE SELECTED!\n");
-                    } else {
-                        System.out.println("Invalid bread size selection. Defaulting to MEDIUM.");
-                        userBreadSize = BreadSize.MEDIUM;
-                    }
-                    userToasted = toasted.equalsIgnoreCase("yes");
+                    makeSandwich.chooseBreadType(breadTypeInput);
+                    makeSandwich.chooseBreadSize(breadSizeInput);
+
+                    BreadType userBreadType = makeSandwich.getUserBreadType();
+                    BreadSize userBreadSize = makeSandwich.getUserBreadSize();
 
                     // Create and add sandwich to order
-                    Sandwich s = new Sandwich(userBreadType, userBreadSize, userToasted);
+                    Sandwich s = new Sandwich(userBreadType, userBreadSize, toasted);
 
-                    addRegularToppingToSandwich(s);
+                    makeSandwich.addRegularToppingToSandwich(s);
 
                     int meatInput = getIntInput(displayMeats());
 
                     // getting user input to add meat and cheese
-                    askForExtraMeat();
-                    String extraMeat = scanner.nextLine();
+                    String extraMeatString = getStringInput(askForExtraMeat());
+                    boolean extraMeat = extraMeatString.equalsIgnoreCase("yes");
 
                     // Adding meat with extra option
-                    MeatType userMeatType;
-                    if (meatInput == 6) {
-                        System.out.println("NO MEAT SELECTED");
-                    } else if (meatInput >= 0 && meatInput < 5 && meatInput < MeatType.values().length) {
-                        userMeatType = MeatType.values()[meatInput];
-                        System.out.println("\n" + MeatType.values()[meatInput] + " SELECTED\n");
-                        boolean userExtraMeat;
-                        userExtraMeat = extraMeat.equalsIgnoreCase("yes");
-                        s.addTopping(new Meat(s.getSandwichSize(), userExtraMeat, userMeatType));
-                    } else {
-                        System.out.println("\nInvalid meat selection. Defaulting to CHICKEN.\n");
-                        userMeatType = MeatType.CHICKEN;
-                    }
+                    makeSandwich.chooseMeatType(meatInput, s, extraMeat);
 
                     int cheeseInput = getIntInput(displayCheese());
 
-                    askForExtraCheese();
-                    String extraCheese = scanner.nextLine();
+                    String extraCheese = getStringInput(askForExtraCheese());
 
                     // Adding cheese with extra option
                     CheeseType userCheeseType;
@@ -183,10 +95,8 @@ public class UserInterfaceMethods extends DisplayScreens {
                         System.out.println("Invalid cheese selection. Defaulting to CHEDDAR.");
                         userCheeseType = CheeseType.CHEDDAR;
                     }
-
-
                     // Adding sauce to sandwich
-                    addSauce(s);
+                    makeSandwich.addSauce(s);
                     order.addItem(s);
                     System.out.println(order.items);
                     System.out.println("\nSANDWICH ADDED\n");
@@ -201,8 +111,8 @@ public class UserInterfaceMethods extends DisplayScreens {
                 } catch (Exception e) {
                     System.out.println("An unexpected error occurred: ");
                 }
-                anotherSandwich();
-                String anotherSandwichInput = scanner.nextLine();
+                String anotherSandwichInput = getStringInput(anotherSandwich());
+
                 if (anotherSandwichInput.equalsIgnoreCase("no")) {
                     addingSandwich = false;
 
@@ -254,8 +164,8 @@ public class UserInterfaceMethods extends DisplayScreens {
             }
 
             // After adding a drink, ask if they want to add more
-            moreDrink();
-            String moreDrinkInput = scanner.nextLine();
+
+            String moreDrinkInput = getStringInput(moreDrink());
 
             if (moreDrinkInput.equalsIgnoreCase("no")) {
                 addingDrinks = false;
@@ -291,8 +201,8 @@ public class UserInterfaceMethods extends DisplayScreens {
                 System.out.println("Invalid input. Please enter a number.");
                 scanner.nextLine();
             }
-            moreChips();
-            String moreChipsInput = scanner.nextLine();
+
+            String moreChipsInput = getStringInput(moreChips());
             if (moreChipsInput.equalsIgnoreCase("no")) {
                 addingChips = false;
                 System.out.println("\nNo more chips will be added.\n");
@@ -375,8 +285,8 @@ public class UserInterfaceMethods extends DisplayScreens {
         }
         if (meat.equalsIgnoreCase("no")){
             int meatInput = getIntInput(displayMeats());
-            askForExtraMeat();
-            String extraMeat = scanner.nextLine();
+
+            String extraMeat = getStringInput(askForExtraMeat());
 
             MeatType userMeatType;
             if (meatInput == 6) {
@@ -399,7 +309,7 @@ public class UserInterfaceMethods extends DisplayScreens {
             b.addTopping(new RegularTopping(ToppingType.TOMATOES));
             System.out.println("OK ADDING LETTUCE AND TOMATOES.....\n");
         } else {
-            addRegularToppingToSandwich(b);
+            makeSandwich.addRegularToppingToSandwich(b);
         }
 
         System.out.println("IS CHEDDAR CHEESE OK?");
@@ -410,8 +320,7 @@ public class UserInterfaceMethods extends DisplayScreens {
         }
         if (cheese.equalsIgnoreCase("no")) {
             int cheeseInput = getIntInput(displayCheese());
-            askForExtraCheese();
-            String extraCheese = scanner.nextLine();
+            String extraCheese = getStringInput(askForExtraCheese());
             CheeseType userCheeseType;
             if (cheeseInput == 4) {
                 System.out.println("\nNO CHEESE SELECTED\n");
@@ -434,11 +343,11 @@ public class UserInterfaceMethods extends DisplayScreens {
             System.out.println("\nOK ADDING RANCH....\n");
         }
         if (sauce.equalsIgnoreCase("no")){
-            addSauce(b);
+            makeSandwich.addSauce(b);
         }
         order.addItem(b);
         System.out.println("\nSANDWICH ADDED\n");
     }
 
-
 }
+
