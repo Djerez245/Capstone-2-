@@ -43,6 +43,26 @@ public class Sandwich implements Item {
         return sandwichPrice;
     }
 
+    public void setBreadType(BreadType breadType) {
+        this.breadType = breadType;
+    }
+
+    public void setSandwichSize(BreadSize sandwichSize) {
+        this.sandwichSize = sandwichSize;
+    }
+
+    public void setTopping(ArrayList<Topping> topping) {
+        this.topping = topping;
+    }
+
+    public void setToasted(boolean toasted) {
+        isToasted = toasted;
+    }
+
+    public void setSandwichPrice(double sandwichPrice) {
+        this.sandwichPrice = sandwichPrice;
+    }
+
     @Override
     public double getPrice() {
         if (BreadSize.SMALL == sandwichSize) {

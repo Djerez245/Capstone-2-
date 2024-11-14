@@ -17,6 +17,10 @@ public class Cheese extends PremiumToppings implements Priceable, Topping {
         return cheeseType;
     }
 
+    public void setCheeseType(CheeseType cheeseType) {
+        this.cheeseType = cheeseType;
+    }
+
     @Override
     public double getPrice() {
         if (cheeseType == CheeseType.NOCHEESE){

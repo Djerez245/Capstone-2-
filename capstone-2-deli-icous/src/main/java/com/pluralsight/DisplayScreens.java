@@ -31,6 +31,16 @@ public class DisplayScreens {
                 (2) EXIT
                 """);
     }
+
+    public static String chooseSandwich(){
+        return  """
+                SELECT YOUR SANDWICH
+                (1) BLT
+                (2) PHILLY CHEESE STEAK
+                (3) BUILD YOUR OWN
+                """;
+    }
+
     public static String displaySelectBreadType(){
         return  """
                 PLEASE SELECT THE TYPE OF BREAD THAT YOU WOULD LIKE:

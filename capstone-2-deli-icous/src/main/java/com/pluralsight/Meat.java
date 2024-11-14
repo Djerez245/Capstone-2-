@@ -17,6 +17,10 @@ public class Meat extends PremiumToppings implements Priceable, Topping {
         return meatType;
     }
 
+    public void setMeatType(MeatType meatType) {
+        this.meatType = meatType;
+    }
+
     @Override
     public double getPrice() {
         if (meatType == MeatType.NOMEAT){
