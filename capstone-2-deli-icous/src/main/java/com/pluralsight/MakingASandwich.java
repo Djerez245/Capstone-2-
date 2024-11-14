@@ -134,11 +134,7 @@ public class MakingASandwich  {
         }
     }
 
-    public void chooseCheeseType(int cheeseType, Sandwich s, boolean userExtraCheese) {
-        int cheeseInput = user.getIntInput(displayCheese());
-
-        String extraCheese = user.getStringInput(askForExtraCheese());
-
+    public void chooseCheeseType(int cheeseInput, Sandwich s) {
         // Adding cheese with extra option
         CheeseType userCheeseType;
         if (cheeseInput == 4) {
@@ -146,12 +142,88 @@ public class MakingASandwich  {
         } else if (cheeseInput >= 0 && cheeseInput < CheeseType.values().length) {
             userCheeseType = CheeseType.values()[cheeseInput];
             System.out.println("\n" + CheeseType.values()[cheeseInput] + " SELECTED\n");
-            userExtraCheese = extraCheese.equalsIgnoreCase("yes");
-            Cheese c = new Cheese(s.getSandwichSize(), userExtraCheese, userCheeseType);
+            String extraCheeseString = user.getStringInput(askForExtraCheese());
+            boolean extraCheese = extraCheeseString.equalsIgnoreCase("yes");
+            Cheese c = new Cheese(s.getSandwichSize(), extraCheese, userCheeseType);
             s.addTopping(c);
         } else {
             System.out.println("Invalid cheese selection. Defaulting to CHEDDAR.");
             userCheeseType = CheeseType.CHEDDAR;
+        }
+    }
+
+    public void addBlt() {
+        String changeSandwich = user.getStringInput("WOULD YOU LIKE TO KEEP THE SANDWICH THE SAME?");
+
+        if (changeSandwich.equalsIgnoreCase("yes")) {
+            BreadType userBreadType = BreadType.WHITE;
+            BreadSize userBreadSize = BreadSize.MEDIUM;
+            MeatType userMeatType = MeatType.BACON;
+            ToppingType userToppingType = ToppingType.TOMATOES;
+            ToppingType userToppingType2 = ToppingType.LETTUCE;
+            CheeseType userCheeseType = CheeseType.CHEDDAR;
+            SaucesType userSauceType = SaucesType.RANCH;
+        } else {
+
+            String breadType = user.getStringInput("THE BLT COME WITH WHITE BREAD IS THAT OK?");
+
+            if (breadType.equalsIgnoreCase("yes")) {
+                System.out.println("\nOK YOUR BREAD IS WHITE\n");
+            }
+            if (breadType.equalsIgnoreCase("no")) {
+                int userBreadTypeInput = user.getIntInput(displaySelectBreadType());
+                chooseBreadType(userBreadTypeInput);
+            } else {
+                System.out.println("Invalid choice. Defaulting to White Bread.");
+            }
+            String breadSize = user.getStringInput("THE BLT COME ON 8 INCH BREAD IS THAT OK?");
+
+            if (breadSize.equalsIgnoreCase("yes")) {
+                System.out.println("\nOK, YOUR BREAD SIZE IS MEDIUM\n");
+            }
+            if (breadSize.equalsIgnoreCase("no")) {
+                int userBreadSizeInput = user.getIntInput(displaySelectBreadSize());
+                chooseBreadSize(userBreadSizeInput);
+            } else {
+                System.out.println("Invalid choice. Defaulting to MEDIUM.");
+            }
+            Sandwich b = new Sandwich(userBreadType, userBreadSize, true);
+
+            String meat = user.getStringInput("IS BACON OK?");
+
+            if (meat.equalsIgnoreCase("yes")) {
+                System.out.println("\nOK ADDING BACON.....\n");
+            }
+            if (meat.equalsIgnoreCase("no")) {
+                int meatInput = user.getIntInput(displayMeats());
+                chooseMeatType(meatInput, b);
+            }
+            String topping = user.getStringInput("THE BLT COMES WITH LETTUCE AND TOMATO IS THAT OK?");
+
+            if (topping.equalsIgnoreCase("yes")) {
+                System.out.println("OK ADDING LETTUCE AND TOMATOES.....\n");
+            } else {
+                addRegularToppingToSandwich(b);
+            }
+            String cheese = user.getStringInput("IS CHEDDAR CHEESE OK?");
+
+            if (cheese.equalsIgnoreCase("yes")) {
+                System.out.println("\nOK ADDING CHEDDER\n");
+            }
+            if (cheese.equalsIgnoreCase("no")) {
+                int cheeseInput = user.getIntInput(displayCheese());
+                chooseCheeseType(cheeseInput, b);
+            }
+            String sauce = user.getStringInput("IS RANCH OK?");
+            if (sauce.equalsIgnoreCase("yes")) {
+                b.addTopping(new Sauce(SaucesType.RANCH));
+                System.out.println("\nOK ADDING RANCH....\n");
+            }
+            if (sauce.equalsIgnoreCase("no")) {
+                addSauce(b);
+            }
+            user.order.addItem(b);
+            System.out.println("\nSANDWICH ADDED\n");
         }
     }
 

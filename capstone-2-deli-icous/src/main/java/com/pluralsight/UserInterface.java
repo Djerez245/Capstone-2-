@@ -49,7 +49,6 @@ public class UserInterface extends UserInterfaceMethodsV2{
                     case 0 -> {
                         ordering = false;
                         System.out.println("Going back home....");
-                        runApp();
                     }
                     default -> System.out.println("Invalid input. Please select 1 - 9.");
                 }
