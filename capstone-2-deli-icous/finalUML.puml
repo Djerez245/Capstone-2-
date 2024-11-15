@@ -1,0 +1,275 @@
+@startuml
+enum com.pluralsight.enums.MeatType {
++  STEAK
++  HAM
++  SALAMI
++  ROASTBEEF
++  CHICKEN
++  BACON
++  NOMEAT
+}
+
+class com.pluralsight.DeliApp {
++ {static} void main(String[])
+}
+
+class com.pluralsight.Chips {
+- double price
++ ChipsType chipsType
++ ChipsType getChipsType()
++ double getPrice()
++ String toStringForCsv()
+}
+
+
+interface com.pluralsight.interfaces.Topping {
+}
+class com.pluralsight.Philly {
++ void setBreadType(BreadType)
++ void setSandwichSize(BreadSize)
++ void setToasted(boolean)
+}
+
+enum com.pluralsight.enums.CheeseType {
++  AMERICAN
++  PROVOLONE
++  CHEDDAR
++  SWISS
++  NOCHEESE
+}
+
+class com.pluralsight.RegularTopping {
+~ ToppingType toppingType
++ ToppingType getToppingType()
+}
+
+
+class com.pluralsight.DisplayScreens {
++ {static} void displayHeader()
++ {static} void displayOrderScreen()
++ {static} void displayHomeScreen()
++ {static} String chooseSandwich()
++ {static} String displaySelectBreadType()
++ {static} String displaySelectBreadSize()
++ {static} String displayMeats()
++ {static} String askForExtraMeat()
++ {static} String displayCheese()
++ {static} String askForExtraCheese()
++ {static} String displaySauces()
++ {static} String moreSauce()
++ {static} String whatToppings()
++ {static} String moreToppings()
++ {static} String toastedOrNo()
++ {static} String anotherSandwich()
++ {static} String typeOfChips()
++ {static} String moreChips()
++ {static} String whatDrinkSize()
++ {static} String drinkType()
++ {static} String moreDrink()
++ {static} String displayCheckout()
+}
+
+enum com.pluralsight.enums.BreadType {
++  WHITE
++  WHEAT
++  RYE
++  WRAP
+}
+
+class com.pluralsight.DeliAppGUI {
+}
+enum com.pluralsight.enums.DrinkType {
++  WATER
++  COKE
++  SPRITE
++  SWEETTEA
++  UNSWEETTEA
++  MOUNTAINDEW
++  SIGNATUREDRINK
+}
+
+class com.pluralsight.UserInterface {
+~ Scanner scanner
++ void runApp()
++ void orderMenu()
+}
+
+
+class com.pluralsight.Drink {
+# DrinkSize drinkSize
+# double drinkPrice
+# DrinkType drinkType
++ DrinkSize getDrinkSize()
++ DrinkType getDrinkType()
++ double getPrice()
++ String toStringForCsv()
+}
+
+
+enum com.pluralsight.enums.Sides {
++  AUJUS
++  SAUCE
+}
+
+enum com.pluralsight.enums.ChipsType {
++  DORITOS
++  LAYS
++  SOURCREAMANDONION
+}
+
+class com.pluralsight.UserInterfaceMethods {
+~ Scanner scanner
+~ Order order
+~ PrintReceipt receipt
++ int getIntInput(String)
++ String getStringInput(String)
++ void addSandwich()
++ void addDrink()
++ void addChips()
++ void checkout(Order)
++ void addBlt()
+}
+
+
+interface com.pluralsight.interfaces.Item {
+~ String toStringForCsv()
+}
+
+interface com.pluralsight.interfaces.Priceable {
+~ double getPrice()
+}
+
+abstract class com.pluralsight.PremiumToppings {
+# BreadSize breadSize
+# boolean extraTopping
+# double toppingPrice
++ BreadSize getBreadSize()
++ boolean isExtraTopping()
+}
+
+
+class com.pluralsight.Order {
+# ArrayList<Item> items
+- double price
++ double getPrice()
++ void addItem(Item)
++ void removeOrder(Order)
++ ArrayList<Item> getItems()
+}
+
+
+class com.pluralsight.Sandwich {
+# BreadType breadType
+# BreadSize sandwichSize
+# ArrayList<Topping> topping
+# boolean isToasted
+# double sandwichPrice
++ BreadSize getSandwichSize()
++ void setBreadType(BreadType)
++ void setSandwichSize(BreadSize)
++ void setToasted(boolean)
++ double getPrice()
++ void addTopping(Topping)
++ String toStringForCsv()
+}
+
+
+class com.pluralsight.BLT {
++ void setBreadType(BreadType)
++ void setSandwichSize(BreadSize)
++ void setToasted(boolean)
+}
+
+enum com.pluralsight.enums.ToppingType {
++  LETTUCE
++  PEPPERS
++  ONIONS
++  TOMATOES
++  JALEPENOS
++  CUCUMBERS
++  PICKLES
++  GUACAMOLE
++  MUSHROOMS
+}
+
+class com.pluralsight.Cheese {
+# CheeseType cheeseType
++ CheeseType getCheeseType()
++ void setCheeseType(CheeseType)
++ double getPrice()
+}
+
+
+enum com.pluralsight.enums.DrinkSize {
++  SMALL
++  MEDIUM
++  LARGE
+}
+
+enum com.pluralsight.enums.BreadSize {
++  SMALL
++  MEDIUM
++  LARGE
+~ String description
+}
+
+enum com.pluralsight.enums.SaucesType {
++  MAYO
++  MUSTARD
++  KETCHUP
++  RANCH
++  THOUSANDISLAND
++  VINAIGRETTE
+}
+
+class com.pluralsight.PrintReceipt {
+~ String receiptHeader
++ void printReceiptToFile(Order)
+}
+
+
+class com.pluralsight.Meat {
+# MeatType meatType
++ MeatType getMeatType()
++ void setMeatType(MeatType)
++ double getPrice()
+}
+
+
+class com.pluralsight.Sauce {
+~ SaucesType sauceType
++ SaucesType getSauceType()
+}
+
+
+class com.pluralsight.CreateADrink {
+~ DrinkSize selectedDrinkSize
+~ DrinkType selectedDrinkType
++ DrinkSize getSelectedDrinkSize()
++ DrinkType getSelectedDrinkType()
++ void chooseDrink(int,int)
+}
+
+
+
+
+com.pluralsight.interfaces.Item <|.. com.pluralsight.Chips
+com.pluralsight.Sandwich <|-- com.pluralsight.Philly
+com.pluralsight.interfaces.Topping <|.. com.pluralsight.RegularTopping
+com.pluralsight.UserInterfaceMethods <|-- com.pluralsight.UserInterface
+com.pluralsight.interfaces.Item <|.. com.pluralsight.Drink
+com.pluralsight.DisplayScreens <|-- com.pluralsight.UserInterfaceMethods
+com.pluralsight.interfaces.Priceable <|-- com.pluralsight.interfaces.Item
+com.pluralsight.interfaces.Priceable <|.. com.pluralsight.PremiumToppings
+com.pluralsight.interfaces.Topping <|.. com.pluralsight.PremiumToppings
+com.pluralsight.interfaces.Priceable <|.. com.pluralsight.Order
+com.pluralsight.interfaces.Item <|.. com.pluralsight.Sandwich
+com.pluralsight.Sandwich <|-- com.pluralsight.BLT
+com.pluralsight.interfaces.Priceable <|.. com.pluralsight.Cheese
+com.pluralsight.interfaces.Topping <|.. com.pluralsight.Cheese
+com.pluralsight.PremiumToppings <|-- com.pluralsight.Cheese
+com.pluralsight.interfaces.Priceable <|.. com.pluralsight.Meat
+com.pluralsight.interfaces.Topping <|.. com.pluralsight.Meat
+com.pluralsight.PremiumToppings <|-- com.pluralsight.Meat
+com.pluralsight.interfaces.Topping <|.. com.pluralsight.Sauce
+@enduml

@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4543c54e-aaf9-4ab6-91cb-20a1894e9c15" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Deli-home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/delioverride.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/CreateADrink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/CreateADrink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterfaceMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterfaceMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,10 +36,13 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jerez/pluralsight/capstone-2/Capstone-2-/capstone-2-deli-icous"
+    "last_opened_file_path": "C:/Users/jerez/pluralsight/capstone-2/Capstone-2-/capstone-2-deli-icous/src/main/resources/images"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jerez\pluralsight\capstone-2\Capstone-2-\capstone-2-deli-icous\src\main\resources\images" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.pluralsight" />
       <recent name="com.pluralsight.enums" />
@@ -59,11 +66,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/pluralsight/PrintReceipt.java</url>
           <line>28</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterfaceMethods.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
