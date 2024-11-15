@@ -46,4 +46,9 @@ public class Cheese extends PremiumToppings implements Priceable, Topping {
         }
         return toppingPrice;
     }
+
+    @Override
+    public String toStringTopping() {
+        return String.format("Cheese: %-10s$%.2f", cheeseType, getPrice());
+    }
 }

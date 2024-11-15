@@ -15,4 +15,9 @@ public class RegularTopping implements Topping {
     public ToppingType getToppingType() {
         return toppingType;
     }
+
+    @Override
+    public String toStringTopping() {
+        return String.format("Cheese: %s", toppingType.name());
+    }
 }

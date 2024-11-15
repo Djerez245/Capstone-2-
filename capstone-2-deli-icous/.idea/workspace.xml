@@ -6,14 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="4543c54e-aaf9-4ab6-91cb-20a1894e9c15" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Chips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Chips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Cheese.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/DisplayScreens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/DisplayScreens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/MakingASandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/MakingASandwich.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Meat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Meat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/PrintReceipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/PrintReceipt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/RegularTopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/RegularTopping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sauce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sauce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterfaceMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterfaceMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/interfaces/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/interfaces/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/enums/BreadSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/enums/BreadSize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/enums/CheeseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/enums/CheeseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/interfaces/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/interfaces/Topping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-033253.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-034027.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-045217.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-051227.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-051316.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-052057.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-052614.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-092559.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-110410.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,24 +35,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2orHRJw4nAdQIibCxxy6agLbXg2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DeliApp.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jerez/pluralsight/capstone-2/Capstone-2-/capstone-2-deli-icous/src/main/resources/images"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DeliApp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jerez/pluralsight/capstone-2/Capstone-2-/capstone-2-deli-icous/src/main/resources/images&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jerez\pluralsight\capstone-2\Capstone-2-\capstone-2-deli-icous\src\main\resources\images" />

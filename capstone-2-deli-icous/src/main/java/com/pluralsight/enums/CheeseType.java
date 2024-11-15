@@ -1,7 +1,7 @@
 package com.pluralsight.enums;
 
 public enum CheeseType {
-    AMERICAN,
+    AMERICAN ,
     PROVOLONE,
     CHEDDAR,
     SWISS,

@@ -13,4 +13,9 @@ public class Sauce implements Topping {
     public SaucesType getSauceType() {
         return sauceType;
     }
+
+    @Override
+    public String toStringTopping() {
+        return String.format("Cheese: %s", sauceType.name());
+    }
 }

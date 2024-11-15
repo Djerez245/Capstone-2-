@@ -63,6 +63,13 @@ public class Sandwich implements Item {
 
     @Override
     public String toStringForItems() {
-        return String.format("Bread:%s\nSandwich size:%s\nToasted:%s:\nSandwich price: $%.2f", breadType, sandwichSize, isToasted, getPrice());
+        String s = String.format("Bread:%s\nSandwich size:%s\n", breadType, sandwichSize);
+        for (Topping t : topping) {
+            s += String.format("Topping: %s\n", t.toStringTopping());
+        }
+        s += "Toasted: ";
+        s+= isToasted ? "yes" : "no";
+        s += String.format("\nSandwich price: $%.2f", getPrice());
+        return s;
     }
 }

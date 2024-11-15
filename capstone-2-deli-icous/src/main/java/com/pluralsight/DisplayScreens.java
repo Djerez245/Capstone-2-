@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import com.pluralsight.interfaces.Item;
+
 public class DisplayScreens {
 
     public static void displayHeader(){
@@ -216,6 +218,14 @@ o Toasted
                o Toasted
                """);
     }
+
+    public void orderSummary(){
+        System.out.println("""
+                ===============================
+                         ORDER SUMMARY
+                ===============================""");
+        }
+
 
 }
 

@@ -16,6 +16,8 @@ public class PrintReceipt {
             =================================
             """);
 
+    String line = ("\n===============================\n");
+
 
     public void printReceiptToFile(Order o) {
 
@@ -29,7 +31,9 @@ public class PrintReceipt {
                 bufferedWriter.write(item.toStringForItems());
                 bufferedWriter.newLine();
             }
-            bufferedWriter.write(String.format("Total: %.2f", o.getPrice()));
+            bufferedWriter.write(line);
+            bufferedWriter.write(String.format("   YOUR TOTAL IS: $%.2f", o.getPrice()));
+            bufferedWriter.write(line);
             bufferedWriter.flush();
             System.out.println("\nTHANK YOU HAVE A GOOD DAY!");
         } catch (Exception e) {

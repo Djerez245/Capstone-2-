@@ -175,29 +175,7 @@ public class UserInterfaceMethods extends DisplayScreens {
         }
     }
 
-    public void checkout(Order o) {
-        Sandwich sandwich;
-        for (Item item : o.items) {
-            System.out.println(item.toStringForItems());
-        }
 
-        int checkoutInput = getIntInput("/n" + displayCheckout());
-        if (checkoutInput == 0) {
-            try {
-                receipt.printReceiptToFile(o);
-            } catch (NullPointerException nullPointerException) {
-                System.out.println("Sorry your order is empty");
-            }
-        }
-        try {
-            if (checkoutInput == 1) {
-                order.removeOrder(o);
-            }
-        } catch (NullPointerException nullPointerException) {
-            System.out.println("Sorry your order is empty");
-        }
-
-    }
 
     public void addBlt() {
         MakingASandwich makeSandwich = new MakingASandwich();
@@ -214,6 +192,8 @@ public class UserInterfaceMethods extends DisplayScreens {
             b.addTopping(new Cheese(userBreadSize, true, CheeseType.CHEDDAR));
             b.addTopping(new Sauce(SaucesType.RANCH));
             order.addItem(b);
+
+            System.out.println("\nSANDWICH ADDED\n");
         } else {
 
             String breadType = getStringInput("THE BLT COME WITH WHITE BREAD IS THAT OK?");
@@ -345,6 +325,38 @@ public class UserInterfaceMethods extends DisplayScreens {
             } else {
                 makeSandwich.addSauce(b);
             }
+            order.addItem(b);
+            System.out.println("\nSANDWICH ADDED\n");
+        }
+
+    }
+    public void checkout(Order o) {
+        orderSummary();
+        for (Item item : o.items) {
+            System.out.println(item.toStringForItems());
+        }
+        System.out.printf("""
+        ===============================
+           YOUR TOTAL IS: $%.2f
+        ===============================
+        
+        """, o.getPrice());
+
+
+        int checkoutInput = getIntInput(displayCheckout());
+        if (checkoutInput == 0) {
+            try {
+                receipt.printReceiptToFile(o);
+            } catch (NullPointerException nullPointerException) {
+                System.out.println("Sorry your order is empty");
+            }
+        }
+        try {
+            if (checkoutInput == 1) {
+                order.removeOrder(o);
+            }
+        } catch (NullPointerException nullPointerException) {
+            System.out.println("Sorry your order is empty");
         }
 
     }

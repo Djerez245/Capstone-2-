@@ -1,8 +1,0 @@
-=================================
-            RECEIPT
-=================================
-Bread:WHITE
-Sandwich size:MEDIUM
-Toasted:true:
-Sandwich price: $7.00
-Total: 7.0
