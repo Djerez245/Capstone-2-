@@ -23,7 +23,7 @@ public class Chips implements Item {
 
 
     @Override
-    public String toStringForCsv() {
+    public String toStringForItems() {
         return String.format("%s: $%.2f", chipsType, getPrice());
     }
 }

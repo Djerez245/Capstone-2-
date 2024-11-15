@@ -40,7 +40,7 @@ public class Drink implements Item {
     }
 
     @Override
-    public String toStringForCsv() {
+    public String toStringForItems() {
         return String.format("%s, %s: $%.2f", drinkType, drinkSize, getPrice());
     }
 }

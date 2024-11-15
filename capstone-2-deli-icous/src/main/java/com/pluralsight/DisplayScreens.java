@@ -77,7 +77,7 @@ public class DisplayScreens {
                 """;
     }
     public static String askForExtraMeat(){
-        return "WOULD YOU LIKE EXTRA MEAT?";
+        return "WOULD YOU LIKE EXTRA MEAT? (Enter yes or no)";
     }
 
     public static String displayCheese(){
@@ -92,7 +92,7 @@ public class DisplayScreens {
     }
 
     public static String askForExtraCheese(){
-        return "WOULD YOU LIKE EXTRA CHEESE?";
+        return "WOULD YOU LIKE EXTRA CHEESE? (Enter yes or no)";
     }
 
     public static String displaySauces(){
@@ -110,7 +110,7 @@ public class DisplayScreens {
     }
 
     public static String moreSauce(){
-        return  "WOULD YOU LIKE TO ADD MORE SAUCE?";
+        return  "WOULD YOU LIKE TO ADD MORE SAUCE? (Enter yes or no)";
     }
 
     public static String whatToppings(){
@@ -131,7 +131,7 @@ public class DisplayScreens {
     }
 
     public static String moreToppings(){
-        return  "WOULD YOU LIKE TO ADD MORE TOPPINGS?";
+        return  "WOULD YOU LIKE TO ADD MORE TOPPINGS? (Enter yes or no)";
     }
 
     public static String toastedOrNo(){
@@ -153,7 +153,7 @@ public class DisplayScreens {
     }
 
     public static String moreChips(){
-        return  "WOULD YOU LIKE TO ADD MORE CHIPS?";
+        return  "WOULD YOU LIKE TO ADD MORE CHIPS? (Enter yes or no)";
     }
 
     public static String whatDrinkSize(){
@@ -181,15 +181,40 @@ public class DisplayScreens {
     }
 
     public static String moreDrink(){
-         return  "WOULD YOU LIKE ANOTHER DRINK?";
+         return  "WOULD YOU LIKE ANOTHER DRINK? (Enter yes or no)";
     }
 
     public static String displayCheckout(){
         return """
-                 ARE YOU SURE THAT YOU WOULD LIKE TO CHECK OUT CHECK-OUT?
+                 ARE YOU SURE THAT YOU WOULD LIKE TO CHECK OUT?
                  (0) TO CONFIRM
                  (1) CANCEL ORDER
                 """;
+    }
+
+    public static void whatComesOnPhilly(){
+        System.out.println("""
+Philly Cheese Steak
+o 8" white bread
+o Steak
+o American Cheese
+o Peppers
+o Mayo
+o Toasted
+                """);
+    }
+
+    public static void whatComesOnBLT(){
+        System.out.println("""
+               BLT
+               o 8" white bread
+               o Bacon
+               o Cheddar
+               o Lettuce
+               o Tomato
+               o Ranch
+               o Toasted
+               """);
     }
 
 }

@@ -38,6 +38,10 @@ public class Sandwich implements Item {
         isToasted = toasted;
     }
 
+    public ArrayList<Topping> getTopping() {
+        return topping;
+    }
+
     @Override
     public double getPrice() {
         if (BreadSize.SMALL == sandwichSize) {
@@ -58,7 +62,7 @@ public class Sandwich implements Item {
 
 
     @Override
-    public String toStringForCsv() {
+    public String toStringForItems() {
         return String.format("Bread:%s\nSandwich size:%s\nToasted:%s:\nSandwich price: $%.2f", breadType, sandwichSize, isToasted, getPrice());
     }
 }

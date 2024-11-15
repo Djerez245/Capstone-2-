@@ -26,7 +26,7 @@ public class PrintReceipt {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename))){
             bufferedWriter.write(receiptHeader);
             for (Item item : o.items) {
-                bufferedWriter.write(item.toStringForCsv());
+                bufferedWriter.write(item.toStringForItems());
                 bufferedWriter.newLine();
             }
             bufferedWriter.write(String.format("Total: %.2f", o.getPrice()));
