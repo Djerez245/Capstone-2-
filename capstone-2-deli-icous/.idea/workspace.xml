@@ -6,26 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4543c54e-aaf9-4ab6-91cb-20a1894e9c15" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Cheese.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/DisplayScreens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/DisplayScreens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Meat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Meat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/PrintReceipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/PrintReceipt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/PremiumToppings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/PremiumToppings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/RegularTopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/RegularTopping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sauce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sauce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterfaceMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterfaceMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/enums/BreadSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/enums/BreadSize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/enums/CheeseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/enums/CheeseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/interfaces/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/interfaces/Topping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-033253.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-034027.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-045217.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-051227.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-051316.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-052057.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-052614.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-092559.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receipts/20241114-110410.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

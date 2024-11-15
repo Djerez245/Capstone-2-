@@ -344,22 +344,25 @@ public class UserInterfaceMethods extends DisplayScreens {
 
 
         int checkoutInput = getIntInput(displayCheckout());
-        if (checkoutInput == 0) {
-            try {
-                receipt.printReceiptToFile(o);
-            } catch (NullPointerException nullPointerException) {
-                System.out.println("Sorry your order is empty");
+        try {
+            if (checkoutInput == 0) {
+                if(order.items.isEmpty()){
+                    System.out.println("SORRY YOUR CART IS EMPTY");
+                    }
+                if (!order.items.isEmpty()) {
+                    receipt.printReceiptToFile(o);
             }
         }
-        try {
             if (checkoutInput == 1) {
                 order.removeOrder(o);
+                System.out.println("ORDER HAS BEEN REMOVED");
             }
-        } catch (NullPointerException nullPointerException) {
-            System.out.println("Sorry your order is empty");
+
+        }catch (InputMismatchException e){
+            System.out.println("please enter a valid number");
         }
 
-    }
+        }
 
 }
 

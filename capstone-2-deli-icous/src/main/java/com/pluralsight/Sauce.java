@@ -10,9 +10,6 @@ public class Sauce implements Topping {
         this.sauceType = sauceType;
     }
 
-    public SaucesType getSauceType() {
-        return sauceType;
-    }
 
     @Override
     public String toStringTopping() {

@@ -23,7 +23,7 @@ public class DisplayScreens {
                 (2) ADD A DRINK
                 (3) ADD CHIPS
                 (4) CHECKOUT
-                (0) CANCEL ORDER
+                (0) CANCEL ORDER AND GO HOME
                 """);
     }
 

@@ -48,6 +48,7 @@ public class UserInterface extends UserInterfaceMethods {
                     case 3 -> addChips();
                     case 4 -> checkout(order);
                     case 0 -> {
+                        order.removeOrder(order);
                         ordering = false;
                         System.out.println("Going back home....");
                     }

@@ -29,8 +29,5 @@ public class Order implements Priceable {
         items.clear();
     }
 
-    public ArrayList<Item> getItems() {
-        return items;
-    }
 
 }

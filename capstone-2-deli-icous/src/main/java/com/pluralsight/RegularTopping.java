@@ -12,9 +12,6 @@ public class RegularTopping implements Topping {
         this.toppingType = toppingType;
     }
 
-    public ToppingType getToppingType() {
-        return toppingType;
-    }
 
     @Override
     public String toStringTopping() {
