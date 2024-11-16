@@ -1,0 +1,15 @@
+=================================
+            RECEIPT
+=================================
+Bread:WHITE
+Sandwich size:MEDIUM
+Topping: Cheese: ROASTBEEF $3.00
+Topping: Cheese: PROVOLONE $2.10
+Topping: Cheese: RANCH
+Toasted: yes
+Sandwich price: $7.00
+SOURCREAMANDONION: $1.50
+
+===============================
+   YOUR TOTAL IS: $17.00
+===============================

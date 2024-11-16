@@ -32,13 +32,16 @@ public class UserInterfaceMethods extends DisplayScreens {
     public void addSandwich() {
         MakingASandwich makeSandwich = new MakingASandwich();
 
+        // if the user enters 1 I bring them to the method to add a BLT to their order
         int selectSandwich = getIntInput(chooseSandwich());
         if (selectSandwich == 1) {
             addBlt();
         }
+        // if the user enters 2 I bring them to the method to add a philly to their order
         if (selectSandwich == 2) {
             addPhilly();
         }
+        // if the user enters 3 I continue to add a build your own sandwich
         if (selectSandwich == 3) {
             boolean addingSandwich = true;
             while (addingSandwich) {
@@ -51,16 +54,17 @@ public class UserInterfaceMethods extends DisplayScreens {
                     boolean toasted = toastedString.equalsIgnoreCase("yes");
 
                     // user can select their Bread Type and Size
-                    makeSandwich.chooseBreadType(breadTypeInput);
+                    makeSandwich.chooseBreadType(breadTypeInput); // logic to take the users input and get the correct bread type and size
                     makeSandwich.chooseBreadSize(breadSizeInput);
-                    BreadType userBreadType = makeSandwich.getUserBreadType();
+                    BreadType userBreadType = makeSandwich.getUserBreadType(); // here I use getters to get the bread type and size so I can add them to the sandwich
                     BreadSize userBreadSize = makeSandwich.getUserBreadSize();
 
                     // Create and add sandwich to order
                     Sandwich s = new Sandwich(userBreadType, userBreadSize, toasted);
 
                     // getting user input to add meat and cheese
-                    makeSandwich.addRegularToppingToSandwich(s);
+                    makeSandwich.addRegularToppingToSandwich(s); // gets users toppings and adds them to the sandwich
+
                     int meatInput = getIntInput(displayMeats());
 
                     // Adding meat with extra option
@@ -185,7 +189,7 @@ public class UserInterfaceMethods extends DisplayScreens {
         String changeSandwich = getStringInput("WOULD YOU LIKE TO KEEP THE SANDWICH THE SAME?");
 
         if (changeSandwich.equalsIgnoreCase("yes")) {
-            Sandwich b = new Sandwich(BreadType.WHITE, BreadSize.MEDIUM, true);
+            Sandwich b = new Sandwich(userBreadType, userBreadSize, true);
             b.addTopping(new Meat(userBreadSize, true, MeatType.BACON));
             b.addTopping(new RegularTopping(ToppingType.TOMATOES));
             b.addTopping(new RegularTopping(ToppingType.LETTUCE));
@@ -232,7 +236,7 @@ public class UserInterfaceMethods extends DisplayScreens {
             String cheese = getStringInput("IS CHEDDAR CHEESE OK?");
 
             if (cheese.equalsIgnoreCase("yes")) {
-                System.out.println("\nOK ADDING CHEDDER\n");
+                System.out.print("\nOK ADDING CHEDDER\n");
             } else {
                 int cheeseInput = getIntInput(displayCheese());
                 makeSandwich.chooseCheeseType(cheeseInput, b);

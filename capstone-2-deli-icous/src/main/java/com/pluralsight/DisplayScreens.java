@@ -76,6 +76,7 @@ public class DisplayScreens {
                 (4) CHICKEN
                 (5) BACON
                 (6) NO MEAT
+                (7) IM DONE ADDING MEAT
                 """;
     }
     public static String askForExtraMeat(){

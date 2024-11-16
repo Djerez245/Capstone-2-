@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.MeatType;
+import com.pluralsight.interfaces.Item;
 import com.pluralsight.interfaces.Priceable;
 import com.pluralsight.interfaces.Topping;
 
@@ -23,12 +24,13 @@ public class Meat extends PremiumToppings implements Priceable, Topping {
 
     @Override
     public double getPrice() {
-        if (meatType == MeatType.NOMEAT){
+
+        if (meatType == MeatType.NOMEAT) {
             toppingPrice += 0;
         }
-        if (BreadSize.SMALL == breadSize){
+        if (BreadSize.SMALL == breadSize) {
             toppingPrice = 1.00;
-            if (extraTopping){
+            if (extraTopping) {
                 toppingPrice += .5;
             }
         }
@@ -47,8 +49,21 @@ public class Meat extends PremiumToppings implements Priceable, Topping {
         return toppingPrice;
     }
 
+    private int countMeats() {
+        Order order = new Order();
+        int meatCount = 0;
+
+        for (Item meat : order.items) {
+            if (meat != null && meatType != MeatType.NOMEAT) {
+                meatCount++;
+            }
+        }
+        return meatCount;
+    }
+
     @Override
     public String toStringTopping() {
         return String.format("Cheese: %-10s$%.2f", meatType.name(), getPrice());
     }
 }
+

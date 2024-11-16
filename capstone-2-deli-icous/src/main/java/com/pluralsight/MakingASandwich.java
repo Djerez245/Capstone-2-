@@ -20,7 +20,6 @@ public class MakingASandwich {
     }
 
     UserInterfaceMethods user = new UserInterfaceMethods();
-    Order order = new Order();
 
 
     public void addRegularToppingToSandwich(Sandwich s) {
@@ -33,11 +32,11 @@ public class MakingASandwich {
                 // Check if the input is valid
                 if (toppingInput >= 0 && toppingInput < ToppingType.values().length) {
                     ToppingType selectedTopping = ToppingType.values()[toppingInput];
-
                     s.addTopping(new RegularTopping(selectedTopping));
 
-                    System.out.println("\n" + ToppingType.values()[toppingInput] + " added to the sandwich!\n");
+                    System.out.println("\n" + selectedTopping + " added to the sandwich!\n");
 
+                    // if the user enters 9 no more toppings will be added
                 } else if (toppingInput == 9) {
                     addingToppings = false;
                     System.out.println("\nNo more toppings will be added.");
@@ -57,6 +56,7 @@ public class MakingASandwich {
 
                 System.out.println("\nNo more toppings will be added.\n");
 
+                // if the user enters yes the loop starts over
             } else if (moreToppingInput.equalsIgnoreCase("yes")) {
                 System.out.println("\nAdding another topping...\n");
 
@@ -72,11 +72,13 @@ public class MakingASandwich {
             int sauceType = user.getIntInput(displaySauces());
             if (sauceType == 6) {
                 addingSauce = false;
+
+                // checks the users input and adds the sauce to the toppings
             } else if (sauceType >= 0 && sauceType < SaucesType.values().length) {
                 SaucesType selectedSauce = SaucesType.values()[sauceType];
                 Sauce sauce = new Sauce(selectedSauce);
                 s.addTopping(sauce);
-                System.out.println("\n" + SaucesType.values()[sauceType] + " SELECTED\n");
+                System.out.println("\n" + selectedSauce + " SELECTED\n");
                 String moreSauceInput = user.getStringInput(moreSauce());
 
                 if (moreSauceInput.equalsIgnoreCase("no")) {
@@ -98,10 +100,13 @@ public class MakingASandwich {
     }
 
     public void chooseBreadType(int breadTypeInput) {
+
+        // checks user inputs and assigns the variable
         if (breadTypeInput >= 0 && breadTypeInput < BreadType.values().length) {
-            userBreadType = BreadType.values()[breadTypeInput];  // Set instance variable
+            userBreadType = BreadType.values()[breadTypeInput];
             System.out.println("\n" + userBreadType + " SELECTED!\n");
         } else {
+            // if the users is invalid I default the bread type to white bread
             System.out.println("Invalid bread type selection. Defaulting to WHITE.");
             userBreadType = BreadType.WHITE;  // Default value
         }
@@ -109,17 +114,18 @@ public class MakingASandwich {
 
     // Method to choose bread size
     public void chooseBreadSize(int breadSizeInput) {
+        // checks user inputs and assigns the variable
         if (breadSizeInput >= 0 && breadSizeInput < BreadSize.values().length) {
-            userBreadSize = BreadSize.values()[breadSizeInput];  // Set instance variable
+            userBreadSize = BreadSize.values()[breadSizeInput];
             System.out.println("\n" + userBreadSize + " SELECTED!\n");
         } else {
+            // if the users is invalid I default the bread size to medium
             System.out.println("Invalid bread size selection. Defaulting to MEDIUM.");
             userBreadSize = BreadSize.MEDIUM;  // Default value
         }
     }
 
     public void chooseMeatType(int meatTypeInput, Sandwich s) {
-
         // Adding meat with extra option
         if (meatTypeInput == 6) {
             System.out.println("NO MEAT SELECTED");
@@ -154,7 +160,8 @@ public class MakingASandwich {
             userCheeseType = CheeseType.CHEDDAR;
         }
     }
-
-
-
 }
+
+
+
+

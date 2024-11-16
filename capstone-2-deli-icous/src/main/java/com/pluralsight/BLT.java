@@ -1,7 +1,6 @@
 package com.pluralsight;
 
-import com.pluralsight.enums.BreadSize;
-import com.pluralsight.enums.BreadType;
+import com.pluralsight.enums.*;
 
 
 public class BLT extends Sandwich{
@@ -24,4 +23,5 @@ public class BLT extends Sandwich{
     public void setToasted(boolean toasted) {
         super.setToasted(true);
     }
+
 }
