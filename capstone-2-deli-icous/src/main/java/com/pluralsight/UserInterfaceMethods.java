@@ -14,14 +14,14 @@ public class UserInterfaceMethods extends DisplayScreens {
     PrintReceipt receipt = new PrintReceipt();
 
 
-
+    // method to get int from user input
     public int getIntInput(String displayScreen) {
         System.out.println(displayScreen);
         int input = scanner.nextInt();
         scanner.nextLine();
         return input;
     }
-
+    // getting user input as a string
     public String getStringInput(String displayScreen) {
         System.out.println(displayScreen);
         String input = scanner.nextLine();
@@ -50,6 +50,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                     int breadTypeInput = getIntInput(displaySelectBreadType());
                     int breadSizeInput = getIntInput(displaySelectBreadSize());
 
+                    // getting value from user as a string and turning it into a boolean
                     String toastedString = getStringInput(toastedOrNo());
                     boolean toasted = toastedString.equalsIgnoreCase("yes");
 
@@ -86,6 +87,7 @@ public class UserInterfaceMethods extends DisplayScreens {
                 } catch (Exception e) {
                     System.out.println("An unexpected error occurred: ");
                 }
+                // asking user if they would like another sandwich if yes the loop restarts
                 String anotherSandwichInput = getStringInput(anotherSandwich());
                 if (anotherSandwichInput.equalsIgnoreCase("no")) {
                     addingSandwich = false;
@@ -104,11 +106,14 @@ public class UserInterfaceMethods extends DisplayScreens {
         boolean addingDrinks = true;
         while (addingDrinks) {
             try {
+                // asking user for their drink size
                 int drinkSizeInput = getIntInput(whatDrinkSize());
+                // gives user an option to go back if they change their mind on getting a drink
                 if (drinkSizeInput == 3) {
                     addingDrinks = false;
                     continue;
                 }
+                // asking user for their drink type
                 int drinkTypeInput = getIntInput(drinkType());
 
 
@@ -189,6 +194,7 @@ public class UserInterfaceMethods extends DisplayScreens {
         String changeSandwich = getStringInput("WOULD YOU LIKE TO KEEP THE SANDWICH THE SAME?");
 
         if (changeSandwich.equalsIgnoreCase("yes")) {
+            // if user wants to keep the sandwich the same I add the items for the  user
             Sandwich b = new Sandwich(userBreadType, userBreadSize, true);
             b.addTopping(new Meat(userBreadSize, true, MeatType.BACON));
             b.addTopping(new RegularTopping(ToppingType.TOMATOES));
@@ -199,7 +205,7 @@ public class UserInterfaceMethods extends DisplayScreens {
 
             System.out.println("\nSANDWICH ADDED\n");
         } else {
-
+            // goes through the sandwich asking the user what they want to change if they say yes they can change what they want
             String breadType = getStringInput("THE BLT COME WITH WHITE BREAD IS THAT OK?");
 
             if (breadType.equalsIgnoreCase("yes")) {
@@ -335,6 +341,7 @@ public class UserInterfaceMethods extends DisplayScreens {
 
     }
     public void checkout(Order o) {
+        // shows the users order summary so they can see what they have before they check out
         orderSummary();
         for (Item item : o.items) {
             System.out.println(item.toStringForItems());
@@ -358,6 +365,7 @@ public class UserInterfaceMethods extends DisplayScreens {
             }
         }
             if (checkoutInput == 1) {
+                // option for user to cancel their order instead of checking out
                 order.removeOrder(o);
                 System.out.println("ORDER HAS BEEN REMOVED");
             }

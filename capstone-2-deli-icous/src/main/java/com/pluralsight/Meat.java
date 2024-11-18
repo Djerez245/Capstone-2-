@@ -52,7 +52,6 @@ public class Meat extends PremiumToppings implements Priceable, Topping {
     private int countMeats() {
         Order order = new Order();
         int meatCount = 0;
-
         for (Item meat : order.items) {
             if (meat != null && meatType != MeatType.NOMEAT) {
                 meatCount++;
